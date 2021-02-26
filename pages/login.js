@@ -1,51 +1,48 @@
-import React, {useState, useEffect} from 'react';
-/* import firebase from '../config/firebase/auth'; */
+import firbaseInstance from '../config/firebase';
+import 'firebase/auth';
+import firebase from 'firebase';
 
-const Login = () =>{
+    Login.getInitialProps= async ()=>{
 
-    const [user, setUser]= useState('');
-    const [email, setEmail]=useState('');
-    const [password, setPassword]=useState('');
-    const [emailError, setEmailError]=useState('');
-    const [passwordError, setPassswordError]=useState('');
-    const [hasAccount, setHasAccount]=useState(false);
+        try {
+            const auth = await firbaseInstance.auth('borres-burger').user();
+            const document= await auth().get();
 
-    const handleLogin =() =>{
-        firebase
-        .auth()
-        .signInWithEmailAndPassword(email, password)
-        .catch(error => {
-            switch (error.code){
-                case "auth/invalid-email":
-                case "auth/user-disabled":
-                case "auth/user-not-found":
-                    setEmailError(error.message)
-                    break;
-                case "auth/wrong-paasword":
-                    setPassswordError(error.message)
-                    break;
+            if (document.exist !== true){
+                throw new Error('Dokumentet finnes ikke');
             }
-        });
-    };
+        }catch(error){
+            return {
+                error:error.message
+            };
+            
+        }
+    } 
+    firebase.auth().createUserWithEmailAndPassword(email, password)
+    .then((userCredential)=>{
+        let user = userCredential.user;
+    })
+    .catch((error)=>{
+        let errorCode = error.code;
+        let errorMassage=error.message;
+    });
+    firebase.auth().signInWithEmailAndPassword(email, password)
+    .then((userCredential)=>{
+        let user = userCredential
+    })
+    .catch ((error)=>{
+        let errorCode = error.code;
+        let errorMessanger=error.message;
+    });
+    firebase.auth().onAuthStateChange((user)=>{
+        if (user){
+            let uid = user.uid;
+        }else{
 
-    const handleSignUp = () => {
+        }
+    })
 
-        firebase
-        .auth()
-        .createUserWithEmailAndPassword(email, password)
-        .catch(error => {
-            switch (error.code){
-                case "auth/email-already-in-use":
-                case "auth/invalid-email":
-                    setEmailError(error.message)
-                    break;
-                case "auth/weak-password":
-                    setPassswordError(error.message)
-                    break;
-            }
-        });
-
-    };
+function Login(){
 
     return(
         <div>
@@ -53,7 +50,7 @@ const Login = () =>{
         </div>
 
     )
-
 }
 
+    
 export default Login;
