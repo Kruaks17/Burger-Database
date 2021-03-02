@@ -16,5 +16,6 @@ const firebaseConfig = {
     console.error('Firebase error');
     }
   }
+
   const firbaseInstance = firebase;
   export default firbaseInstance;
