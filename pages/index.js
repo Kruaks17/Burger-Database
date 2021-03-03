@@ -1,9 +1,9 @@
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
-import firebaseInstance from '../config/firebase';
 import {useState} from 'react';
 import firbaseInstance from '../config/firebase';
-
+import Link from 'next/link';
+import Image from 'next/image';
 
 function burger(){
 
@@ -28,15 +28,26 @@ function burger(){
     })
 
   }
-
 }
 
 export default function Home() {
   return (
+    <>
     <header>
       <h1>Burger</h1>
-    </header>
-    
+    </header> 
+    <main>
+      <Link href="/burger">
+        <a> Burger </a>
+      </Link>
+      <Link href="/fries">
+        <a> Fries </a>
+      </Link>
+      <Link href="/dip">
+        <a> Dip </a>
+      </Link>
+    </main>
+    </>
 
     
   )

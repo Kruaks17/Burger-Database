@@ -8,9 +8,9 @@ function Fries ({fries, error}){
             <ul>
                 {fries.map(item=>{
                     return(
-                        <li key={item}>
+                        <p key={item}>
                             {JSON.stringify(item)}
-                        </li>
+                        </p>
                     )
                    })}
             </ul>

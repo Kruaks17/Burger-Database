@@ -1,13 +1,30 @@
 @import url("https://use.typekit.net/wuf7ncy.css");
 html,
 body {
-  
   font-family: 'montserrat', sans-serif;
-  
 }
+
 a {
   text-decoration: none;
 }
 * {
   box-sizing: border-box;
+}
+header{
+  background-color: white;
+  margin: 0;
+  border: black solid 4px;
+}
+.links{
+
+  border: black solid 4px;
+  margin: 10px auto;
+  padding: 10px;
+
+
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
 }
