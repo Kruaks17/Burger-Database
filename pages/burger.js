@@ -4,6 +4,8 @@ import firebaseInstance from '../config/firebase';
 function Burger ({burger, error}){
 
     return(
+
+        
         
         <main>
             <h1>Burgere</h1>
