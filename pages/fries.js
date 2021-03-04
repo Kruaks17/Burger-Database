@@ -7,12 +7,16 @@ function Fries ({fries, error}){
             <h1>Fries</h1>
             <ul>
                 {fries.map(item=>{
+                    
                     return(
-                        <p key={item}>
-                            {JSON.stringify(item)}
-                        </p>
+                        
+                        <div key={item}>
+                            <h1>{item.navn}</h1>
+                            <p>{item.pris}kr</p>
+                            <button>Bestill</button>
+                        </div>
                     )
-                   })}
+                    })}
             </ul>
         </main>
     )

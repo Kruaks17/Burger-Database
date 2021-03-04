@@ -1,4 +1,6 @@
 import firebase from 'firebase';
+import "firebase/auth";
+
 
 const firebaseConfig = {
     apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
@@ -11,6 +13,7 @@ const firebaseConfig = {
   
   try{
     firebase.initializeApp(firebaseConfig);
+    firebase.auth().setPersistence(firebase.auth.Auth.Persistence.SESSION);
   }catch (error) {
     if (!/already exists/.test(error.massage)){
     console.error('Firebase error');

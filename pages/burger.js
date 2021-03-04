@@ -5,16 +5,16 @@ function Burger ({burger, error}){
 
     return(
 
-        
-        
         <main>
             <h1>Burgere</h1>
             <ul>
                 {burger.map(item=>{
                     return(
-                        <li key={item.id}>
-                            {JSON.stringify(item)}
-                        </li>
+                        <div key={item.id}>
+                            <h2>{item.navn}</h2>
+                            <p>{item.pris}kr</p>
+                            <button>Bestill</button>
+                        </div>
                     )
                 })}
             </ul>

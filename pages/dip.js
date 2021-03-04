@@ -8,9 +8,11 @@ function Dip ({dip, error}){
             <ul>
                 {dip.map(item=>{
                     return(
-                        <li key={item.id}>
-                            {JSON.stringify(item)}
-                        </li>
+                        <div key={item.id}>
+                            <h1>{item.navn}</h1>
+                            <p>{item.pris}kr</p>
+                            <button>Bestill</button>
+                        </div>
                     )
                 })}
 
