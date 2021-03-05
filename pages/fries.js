@@ -4,14 +4,14 @@ function Fries ({fries, error}){
 
     return(
         <main>
-            <h1>Fries</h1>
+            
             <ul>
                 {fries.map(item=>{
                     
                     return(
                         
                         <div key={item}>
-                            <h1>{item.navn}</h1>
+                            <h1 className="ProduktNavn">{item.navn}</h1>
                             <p>{item.pris}kr</p>
                             <button>Bestill</button>
                         </div>

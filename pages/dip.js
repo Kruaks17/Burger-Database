@@ -9,7 +9,7 @@ function Dip ({dip, error}){
                 {dip.map(item=>{
                     return(
                         <div key={item.id}>
-                            <h1>{item.navn}</h1>
+                            <h1 className="ProduktNavn">{item.navn}</h1>
                             <p>{item.pris}kr</p>
                             <button>Bestill</button>
                         </div>

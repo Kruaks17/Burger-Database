@@ -1,12 +1,13 @@
-import {createContext, useEffect} from 'react';
+import {createContext, useEffect, useState} from 'react';
 import nookies from 'nookies';
+import firebase from 'firebase';
 
 
 const AuthContext = createContext({user:null})
 
 export function AuthProvider({children}){
 
-    const [user , setUser]= useState();
+    const [user, setUser]= useState();
 
     useEffect (()=>{
         return firebase.auth().onIdTokenChanged(async(user)=>{

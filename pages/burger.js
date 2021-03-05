@@ -11,7 +11,7 @@ function Burger ({burger, error}){
                 {burger.map(item=>{
                     return(
                         <div key={item.id}>
-                            <h2>{item.navn}</h2>
+                            <h2 className="ProduktNavn">{item.navn}</h2>
                             <p>{item.pris}kr</p>
                             <button>Bestill</button>
                         </div>
