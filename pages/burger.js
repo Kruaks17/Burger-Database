@@ -13,13 +13,14 @@ function Burger ({burger, error}){
                         <div key={item.id}>
                             <h2 className="ProduktNavn">{item.navn}</h2>
                             <p>{item.pris}kr</p>
-                            <button>Bestill</button>
+                            <button className="bestillBtn">Bestill</button>
                         </div>
                     )
                 })}
             </ul>
         </main>
     )
+
 }
 Burger.getInitialProps= async( ) =>{
 

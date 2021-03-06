@@ -7,7 +7,6 @@ export default function Home() {
   return (
     <>
     <header>
-      
       <h1>Børres Burger</h1> 
       <span className="deler">
       </span> <h1>Bestillinger</h1>
@@ -23,13 +22,10 @@ export default function Home() {
         <a>Dip</a>
       </Link>
     </section>
-
     <footer>
     <Profile/>
     </footer>
-    </>
-
-    
+    </>  
   )
 }
 

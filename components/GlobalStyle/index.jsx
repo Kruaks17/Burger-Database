@@ -62,10 +62,7 @@ const GlobalStyle = createGlobalStyle `
             max-width:100vw;
             box-shadow: none;
         }
-        .Login-Overskrift{
-            max-width:100vw;
-            box-shadow: none;
-        }
+        
     }
     button{
 
@@ -131,11 +128,20 @@ const GlobalStyle = createGlobalStyle `
 
         box-shadow: 10px 10px black;
     }
+    @media (max-width:600px){
+        .Login-Overskrift{
+            max-width:100vw;
+            box-shadow: none;
+        }
+    }
     .ProduktNavn{
         background-color:#E84823;
     }
     .loggut_btn {
         width:80px;
+    }
+    button{
+        cursor: pointer;
     }
 
     
