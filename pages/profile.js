@@ -1,35 +1,37 @@
-import React, {useEffect} from 'react'
-import firebase from '../config/firebase'
+import React, {useEffect} from 'react';
+import firebase from '../config/firebase';
 import {useRouter} from 'next/router';
 import {useAuth} from '../auth';
 
 const Profile = () => {
 
-    const Router = useRouter();
+    const router = useRouter();
     const userContext = useAuth();
   
   useEffect(()=>{
       
-    console.log("The Context", userContext.user);
+    console.log("The Context", userContext);
 
   }, [userContext])
   
   const handleSignOut = async () =>{
   
-    const logout = await firbase.auth().signOut();
+    const logout = await firebase.auth().signOut();
     router.push("/login")
 };
     return(
         <div>
-        <button onClick={handleSignOut}>Logg ut</button>
-        {userContext && (
+        <button 
+        className="loggut_btn" 
+        onClick={handleSignOut}>Logg ut</button>
+        {/*userContext && (
             <>
 
-            <p>{userContext.user.email}</p>
-            <p>{userContext.user.uid}</p>
+            <p>{userContext.email}</p>
+            <p>{userContext.uid}</p>
 
             </>
-        )}
+        )*/}
         
         </div>
     )

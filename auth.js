@@ -1,4 +1,4 @@
-import {createContext, useEffect, useState} from 'react';
+import {createContext,useContext, useEffect, useState} from 'react';
 import nookies from 'nookies';
 import firebase from 'firebase';
 
@@ -31,15 +31,12 @@ export function AuthProvider({children}){
         }, 10 * 60 * 1000)
 
         return clearInterval(handle)
-    })
+    });
 
-    return (
-
-        <AuthContext.Provider value={user}>{children}</AuthContext.Provider>
-    );
-
-
-
-
-
+    return <AuthContext.Provider value={user}>{children}</AuthContext.Provider>;
 }
+
+export const useAuth = () => {
+    return useContext(AuthContext);
+    
+};

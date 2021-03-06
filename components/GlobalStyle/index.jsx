@@ -2,14 +2,12 @@ import {createGlobalStyle} from 'styled-components';
 
 const GlobalStyle = createGlobalStyle `
     @import url("https://use.typekit.net/wuf7ncy.css");
-
     *{
         box-sizing:border-box;
         margin: 3px;
         background-color: #E84823;
         
     }
-    
     header{
         
         font-family: 'acumin-pro', sans-serif;
@@ -32,12 +30,9 @@ const GlobalStyle = createGlobalStyle `
 
     }
     ul {
-
-        
         font-family: 'acumin-pro', sans-serif;
         font-size: 2rem;
-        
-
+    
         background-color:#E84823;
         margin-left:10px;
         
@@ -58,24 +53,24 @@ const GlobalStyle = createGlobalStyle `
 
         padding: 50px;
 
-        box-shadow: 10px 20px  black;
+        box-shadow: 10px 10px black;
 
     }
     @media(max-width:600px){
-
         form{
 
+            max-width:100vw;
+            box-shadow: none;
+        }
+        .Login-Overskrift{
             max-width:100vw;
             box-shadow: none;
         }
     }
     button{
 
-        border-bottom: black solid 5px;
-        border-left: black solid 5px;
-        border-top:#E84823 solid 5px;
-        border-right: #E84823 solid 5px;
-
+        border: black solid 5px;
+        
         padding: 5px;
         width: 300px;
         background-color: white;
@@ -88,10 +83,7 @@ const GlobalStyle = createGlobalStyle `
     input {
 
         background-color: white;
-        border-bottom: black solid 5px;
-        border-left: black solid 5px;
-        border-top:#E84823 solid 5px;
-        border-right: #E84823 solid 5px;
+        border: black solid 5px;
 
         color: #E84823;
         font-size: 1rem;
@@ -99,7 +91,6 @@ const GlobalStyle = createGlobalStyle `
 
     }
     input::placeholder{
-
         color:black;
     }
     h2{
@@ -111,8 +102,12 @@ const GlobalStyle = createGlobalStyle `
 
         font-family:'acumin-pro', sans-serif;
         background-color:white;
-        text-decoration:none;
+        text-decoration:underline;
         color:black;
+    }
+    .link-login:hover{
+
+        color: #E84823;
 
     }
     .Login-Overskrift{
@@ -122,18 +117,26 @@ const GlobalStyle = createGlobalStyle `
         align-items:center;
 
         font-family:'acumin-pro', sans-serif;
-        color: white;
+        color: black;
+        background-color:white;
+
+        padding: 10px;
+
+        border: black solid 5px;
+        margin: 0 auto;
+        max-width: 30vw;
         
         margin-bottom:50px;
         margin-top:50px;
+
+        box-shadow: 10px 10px black;
     }
     .ProduktNavn{
         background-color:#E84823;
     }
-
-
-
-    
+    .loggut_btn {
+        width:80px;
+    }
 
     
 `;

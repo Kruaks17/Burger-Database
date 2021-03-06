@@ -32,7 +32,7 @@ const Singup = ()=>{
     
     return(
         <>
-        <h1 className="Login-Overskrift">Lag en ny bruker for å logge inn</h1>
+        <h1 className="Login-Overskrift">Registrer bruker</h1>
         <form className="signUpContainer"  onSubmit={handleSubmit}>
             <h2>Email</h2>
             <input type="text" name="email" placeholder="Email"
@@ -42,7 +42,7 @@ const Singup = ()=>{
             onChange={e=>setPassword(e.target.value)}/>
             <button className="btn" type="submit">Registrer</button>
             <Link  href="/login">
-                <a className="link-login">Har du bruker? Trykk her.</a>
+            <a className="link-login">Har du bruker? Trykk her.</a>
             </Link>
         </form>
         </>

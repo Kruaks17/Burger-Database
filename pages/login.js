@@ -39,7 +39,7 @@ const Login = ()=>{
             onChange={e=>setPassword(e.target.value)}/>
             <button className="btn" type="submit">Logg Inn</button>
             <Link  href="/signup">
-                <a className="link-login">Har du ikke bruker? Trykk her.</a>
+            <a className="link-login">Har du ikke bruker? Trykk her.</a>
             </Link>
         </form>
         </>
