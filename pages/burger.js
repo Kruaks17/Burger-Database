@@ -1,24 +1,26 @@
 import firebaseInstance from '../config/firebase';
+import Profile from "../pages/profile";
 
 
 function Burger ({burger, error}){
 
     return(
 
-        <main>
-            <h1>Burgere</h1>
-            <ul>
-                {burger.map(item=>{
-                    return(
-                        <div key={item.id}>
-                            <h2 className="ProduktNavn">{item.navn}</h2>
-                            <p>{item.pris}kr</p>
-                            <button className="bestillBtn">Bestill</button>
-                        </div>
+    <main>
+        <h1>Burgere</h1>
+        <ul>
+            {burger.map(item=>{
+                return(
+                    <div key={item.id}>
+                        <h2 className="ProduktNavn">{item.navn}</h2>
+                        <p>{item.pris}kr</p>
+                        <button className="bestillBtn">Bestill</button>
+                    </div>
                     )
                 })}
-            </ul>
-        </main>
+        </ul>
+    </main>
+        
     )
 
 }
@@ -35,7 +37,6 @@ Burger.getInitialProps= async( ) =>{
                 id: item.id,
                 ...item.data()
             });
-
         });
 
         return {burger};
@@ -46,6 +47,11 @@ Burger.getInitialProps= async( ) =>{
         };
         
     }
+
 }
+
+
+
+
 
 export default Burger;

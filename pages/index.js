@@ -8,8 +8,9 @@ export default function Home() {
     <>
     <header>
       <h1>Børres Burger</h1> 
-      <span className="deler">
-      </span> <h1>Bestillinger</h1>
+      <span className="deler"></span>
+      <h1>Bestilling<span>0</span></h1>
+      <Profile/>
     </header> 
     <section className="meny">
       <Link href="/burger">
@@ -22,8 +23,9 @@ export default function Home() {
         <a>Dip</a>
       </Link>
     </section>
+    
     <footer>
-    <Profile/>
+    
     </footer>
     </>  
   )

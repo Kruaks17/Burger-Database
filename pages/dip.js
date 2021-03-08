@@ -15,10 +15,7 @@ function Dip ({dip, error}){
                         </div>
                     )
                 })}
-
             </ul>
-
-
         </main>
     )
 }
