@@ -38,7 +38,7 @@ const Singup = ()=>{
             <input type="text" name="email" placeholder="Email"
             onChange={e=>setEmail(e.target.value)}/>
             <h2>Passord</h2>
-            <input type="password" name="password" placeholder="Passord"
+            <input type="password" name="password" placeholder="Passord på 6 tegn minst"
             onChange={e=>setPassword(e.target.value)}/>
             <button className="btn" type="submit">Registrer</button>
             <Link  href="/login">

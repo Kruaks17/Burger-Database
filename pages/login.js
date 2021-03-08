@@ -9,11 +9,14 @@ const Login = ()=>{
     const [password, setPassword]=useState(null);
     const [error, setError]=useState(null);
     const history = useRouter();
-    
+
+    //-----------------------------------------------------------------------
+    // Logger inn med eksiterende bruker og pusher ved click på 
+    // button til forsiden
+    //----------------------------------------------------------------------
     const handleSubmit = async(event)=>{
 
         event.preventDefault();
-
 
         try {
 
@@ -26,24 +29,22 @@ const Login = ()=>{
             console.log("Noe gikk galt");
         }
     };
-    
     return(
         <>
         <h1 className="Login-Overskrift">Logg inn</h1>
         <form onSubmit={handleSubmit}>
             <h2>Email</h2>
             <input type="text" name="email" placeholder="Email"
-            onChange={e=>setEmail(e.target.value)}/>
+            onChange={e => setEmail(e.target.value)}/>
             <h2>Passord</h2>
             <input type="password" name="password" placeholder="Passord"
-            onChange={e=>setPassword(e.target.value)}/>
+            onChange={e => setPassword(e.target.value)}/>
             <button className="btn" type="submit">Logg Inn</button>
             <Link  href="/signup">
-            <a className="link-login">Har du ikke bruker? Trykk her.</a>
+                <a className="link-login">Har du ikke bruker? Trykk her.</a>
             </Link>
         </form>
         </>
-
     )
 }
 

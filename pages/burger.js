@@ -5,7 +5,6 @@ import Profile from "../pages/profile";
 function Burger ({burger, error}){
 
     return(
-
     <main>
         <h1>Burgere</h1>
         <ul>
@@ -19,11 +18,10 @@ function Burger ({burger, error}){
                     )
                 })}
         </ul>
-    </main>
-        
+    </main>    
     )
-
 }
+
 Burger.getInitialProps= async( ) =>{
 
     try {
