@@ -3,15 +3,13 @@ import firebase from '../config/firebase';
 import {useRouter} from 'next/router';
 import {useAuth} from '../auth';
 
-
-
 const Profile = () => {
     const router = useRouter();
     const userContext = useAuth();
   
   useEffect(()=>{
       
-    console.log("The Context", userContext);
+    console.log("The Context");
 
   }, [userContext])
   

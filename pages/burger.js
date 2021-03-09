@@ -1,3 +1,4 @@
+import firbaseInstance from '../config/firebase';
 import firebaseInstance from '../config/firebase';
 import Profile from "../pages/profile";
 
@@ -11,6 +12,7 @@ function Burger ({burger, error}){
             {burger.map(item=>{
                 return(
                     <div key={item.id}>
+                        
                         <h2 className="ProduktNavn">{item.navn}</h2>
                         <p>{item.pris}kr</p>
                         <button className="bestillBtn">Bestill</button>
@@ -27,7 +29,8 @@ Burger.getInitialProps= async( ) =>{
     try {
 
         const brugereCollection = await firebaseInstance.firestore().collection('burgere');
-        const burgerData = await brugereCollection.get({})
+        const ImageStorage = await firbaseInstance.storage().ref('image');
+        const burgerData = await brugereCollection.get()
 
         let burger = [];
         burgerData.forEach(item =>{
@@ -47,9 +50,6 @@ Burger.getInitialProps= async( ) =>{
     }
 
 }
-
-
-
 
 
 export default Burger;
