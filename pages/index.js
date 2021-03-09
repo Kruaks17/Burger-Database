@@ -23,10 +23,6 @@ export default function Home() {
         <a>Dip</a>
       </Link>
     </section>
-    
-    <footer>
-    
-    </footer>
     </>  
   )
 }

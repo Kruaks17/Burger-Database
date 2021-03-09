@@ -3,6 +3,13 @@ import firebaseInstance from '../config/firebase';
 function Dip ({dip, error}){
 
     return(
+        <>
+        <header>
+            <h1>Børres Burger</h1> 
+            <span className="deler"></span>
+            <h1>Bestilling<span>0</span></h1>
+            <Profile/>
+        </header> 
         <main>
             <h1>Dip</h1>
             <ul>
@@ -17,6 +24,7 @@ function Dip ({dip, error}){
                 })}
             </ul>
         </main>
+        </>
     )
 }
 
