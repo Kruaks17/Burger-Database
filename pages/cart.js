@@ -29,7 +29,9 @@ function Cart() {
                         </>
                     )
                 })}
-                    <h2>Totalt:{basket.total}</h2>
+                    <h2>Totaltsum:{basket.total}</h2>
+                    <button>Checkout</button>
+                    <footer></footer>
                     
                     
             </div>
