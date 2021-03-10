@@ -3,8 +3,6 @@ import Profile from "../pages/profile";
 import {useBasket} from "../contexts/BasketContext";
 
 
-
-
 function Burger ({burger, error}){
 
     const basket = useBasket();
@@ -12,12 +10,10 @@ function Burger ({burger, error}){
     const handleAddToBasket = (item) => {
         basket.addProductLine(item);
     }
-    
-
     return(
         <>
     <header>
-      <h1> <a href="/">Børres Burger</a></h1> 
+      <h1> Børres Burger</h1> 
       <span className="deler"></span>
       <h1>Bestilling<span>{basket.total}</span></h1>
       <Profile/>
@@ -44,7 +40,7 @@ function Burger ({burger, error}){
     )
 }
 
-Burger.getInitialProps= async( ) =>{
+Burger.getInitialProps= async() =>{
 
     try {
 

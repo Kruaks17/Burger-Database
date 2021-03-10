@@ -23,7 +23,6 @@ export const Basket = ({children}) => {
         }, 0 )
         setTotal(total)
     },[productLines])
-
     
     return (
         <BasketContext.Provider value={{productLines, addProductLine, total}} >

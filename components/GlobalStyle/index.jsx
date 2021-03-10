@@ -1,10 +1,11 @@
 import {createGlobalStyle} from 'styled-components';
 
 const GlobalStyle = createGlobalStyle `
-    @import url("https://use.typekit.net/wuf7ncy.css");
+    
     *{
+        @import url("https://use.typekit.net/wuf7ncy.css");
         box-sizing:border-box;
-        margin: 3px;
+        
         background-color: #E84823;
         
     }
@@ -15,6 +16,8 @@ const GlobalStyle = createGlobalStyle `
         display:flex;
         justify-content:space-around;
         align-items:center;
+
+        
     }
     .meny{
 
@@ -22,19 +25,28 @@ const GlobalStyle = createGlobalStyle `
         text-decoration: none;
 
         display:flex;
-        justify-content:center;
+        justify-content:space-around;
         align-items:center;
 
         margin-top:50px;
         margin-bottom:40px;
 
+        padding: 20px;
+
     }
+    
+    
     ul {
         font-family: 'acumin-pro', sans-serif;
         font-size: 2rem;
     
         background-color:#E84823;
         margin-left:10px;
+
+        display: grid;
+        grid-template-rows: repeat(3, 1fr);
+        justify-content:center;
+        align-content:center;
         
     }
     form {
@@ -63,12 +75,13 @@ const GlobalStyle = createGlobalStyle `
             box-shadow: none;
         }
         
+        
     }
     button{
 
         border: black solid 5px;
         
-        padding: 5px;
+        padding: 10px;
         width: 300px;
         background-color: white;
         
@@ -86,15 +99,14 @@ const GlobalStyle = createGlobalStyle `
         font-size: 1rem;
         font-family:'acumin-pro', sans-serif;
 
+        padding: 10px;
+
+
     }
     input::placeholder{
         color:black;
     }
-    h2{
-        
-        font-family:'acumin-pro', sans-serif;
-        background-color:white;
-    }
+    
     .link-login{
 
         font-family:'acumin-pro', sans-serif;
@@ -133,17 +145,109 @@ const GlobalStyle = createGlobalStyle `
             max-width:100vw;
             box-shadow: none;
         }
+        .handlekurv{
+            max-width:100vw;
+            box-shadow: none;
+        }
     }
     .ProduktNavn{
+        font-size:2rem;
         background-color:#E84823;
     }
     .loggut_btn {
-        width:80px;
+        width:90px;
     }
-    button{
+    button, a{
         cursor: pointer;
     }
+    h2{
+        font-family:'acumin-pro', sans-serif;
+        background-color:transparent;
+    }
+    .meny a {
+        background-color: white;
+        
+        color: black;
+        font-size: 1.5rem;
+        font-weight: bold;
+        font-family:'acumin-pro', sans-serif;
 
+        text-decoration: none;
+        border: solid black 5px;
+
+        padding: 10px;
+    }
+    .bestillBtn{
+        
+        font-family:'acumin-pro', sans-serif;
+        font-size:1.5rem;
+    }
+    .cart-container {
+
+        display: grid;
+        grid-template-rows: repeat(3, 1fr);
+        justify-content:center;
+        align-content:center;
+
+        background-color: white;
     
+        border: black solid 5px;
+        
+        margin: 0 auto;
+        max-width: 40vw;
+
+        padding: 50px;
+
+        box-shadow: 10px 10px black;
+    }
+    @media (max-width:600px){
+
+        .cart-container{
+            max-width:100vw;
+            box-shadow: none;
+        }
+    }
+    
+    .handlekurv{
+        display:flex;
+        justify-content:center;
+        align-items:center;
+
+        font-family:'acumin-pro', sans-serif;
+        color: black;
+        background-color:white;
+
+        padding: 10px;
+
+        border: black solid 5px;
+        margin: 0 auto;
+        max-width: 40vw;
+        
+        margin-bottom:50px;
+        margin-top:50px;
+
+        box-shadow: 10px 10px black;
+
+    }
+    @media (max-width:600px){
+        .handlekurv{
+            max-width:100vw;
+            box-shadow: none;
+        }
+    }
+    .tilbake{
+        
+        font-family:'acumin-pro', sans-serif;
+        color: black;
+        background-color:white;
+
+    }
+    .productName {
+        font-family:'acumin-pro', sans-serif;
+        color: black;
+        background-color:white;
+
+    }
+     
 `;
 export default GlobalStyle;

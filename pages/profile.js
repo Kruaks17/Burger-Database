@@ -22,7 +22,7 @@ const Profile = () => {
         <button 
         className="loggut_btn" 
         onClick={handleSignOut}>Logg ut</button>
-      
+    
     )
   }
 
