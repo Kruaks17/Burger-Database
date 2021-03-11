@@ -1,26 +1,25 @@
 import {createGlobalStyle} from 'styled-components';
 
 const GlobalStyle = createGlobalStyle `
-    
     *{
         @import url("https://use.typekit.net/wuf7ncy.css");
         box-sizing:border-box;
-        
+    }
+    body{
         background-color: #E84823;
-        
     }
     header{
-        
         font-family: 'acumin-pro', sans-serif;
-
+        color: white;
+       
         display:flex;
         justify-content:space-around;
         align-items:center;
 
-        
+        padding: 10px;
+
     }
     .meny{
-
         font-family: 'acumin-pro', sans-serif;
         text-decoration: none;
 
@@ -31,16 +30,16 @@ const GlobalStyle = createGlobalStyle `
         margin-top:50px;
         margin-bottom:40px;
 
-        padding: 20px;
+        padding: 40px;
 
+        margin: 0 auto;
+        max-width: 50vw;
     }
-    
-    
     ul {
         font-family: 'acumin-pro', sans-serif;
         font-size: 2rem;
     
-        background-color:#E84823;
+        background-color:white;
         margin-left:10px;
 
         display: grid;
@@ -66,7 +65,6 @@ const GlobalStyle = createGlobalStyle `
         padding: 50px;
 
         box-shadow: 10px 10px black;
-
     }
     @media(max-width:600px){
         form{
@@ -74,11 +72,8 @@ const GlobalStyle = createGlobalStyle `
             max-width:100vw;
             box-shadow: none;
         }
-        
-        
     }
     button{
-
         border: black solid 5px;
         
         padding: 10px;
@@ -88,10 +83,8 @@ const GlobalStyle = createGlobalStyle `
         color: black;
         font-size: 1rem;
         font-family:'acumin-pro', sans-serif;
-
     }
     input {
-
         background-color: white;
         border: black solid 5px;
 
@@ -100,13 +93,10 @@ const GlobalStyle = createGlobalStyle `
         font-family:'acumin-pro', sans-serif;
 
         padding: 10px;
-
-
     }
     input::placeholder{
         color:black;
     }
-    
     .link-login{
 
         font-family:'acumin-pro', sans-serif;
@@ -120,7 +110,6 @@ const GlobalStyle = createGlobalStyle `
 
     }
     .Login-Overskrift{
-
         display:flex;
         justify-content:center;
         align-items:center;
@@ -152,7 +141,7 @@ const GlobalStyle = createGlobalStyle `
     }
     .ProduktNavn{
         font-size:2rem;
-        background-color:#E84823;
+        background-color:white;
     }
     .loggut_btn {
         width:90px;
@@ -201,13 +190,11 @@ const GlobalStyle = createGlobalStyle `
         box-shadow: 10px 10px black;
     }
     @media (max-width:600px){
-
         .cart-container{
             max-width:100vw;
             box-shadow: none;
         }
     }
-    
     .handlekurv{
         display:flex;
         justify-content:center;
@@ -227,7 +214,6 @@ const GlobalStyle = createGlobalStyle `
         margin-top:50px;
 
         box-shadow: 10px 10px black;
-
     }
     @media (max-width:600px){
         .handlekurv{
@@ -235,19 +221,56 @@ const GlobalStyle = createGlobalStyle `
             box-shadow: none;
         }
     }
-    .tilbake{
-        
+    .tilbake {
+        display:flex;
+        justify-content:center;
+        align-items:center;
+
         font-family:'acumin-pro', sans-serif;
+        font-weight:bold;
+        text-decoration:none;
+        
         color: black;
         background-color:white;
 
+        padding: 10px;
+
+        border: black solid 5px;
+        margin: 0 auto;
+        max-width: 40vw;
+        
+        box-shadow: 10px 10px black;
     }
     .productName {
         font-family:'acumin-pro', sans-serif;
         color: black;
         background-color:white;
-
     }
-     
+    .menu-container {
+        display:flex;
+        justify-content:center;
+        align-items:center;
+
+        font-family:'acumin-pro', sans-serif;
+        color: black;
+        background-color:white;
+
+        padding: 10px;
+
+        border: black solid 5px;
+        margin: 0 auto;
+        max-width: 45vw;
+        
+        margin-bottom:50px;
+        margin-top:50px;
+
+        box-shadow: 10px 10px black;
+    }
+    @media (max-width:600px){
+        .menu-container{
+            max-width:100vw;
+            box-shadow: none;
+        }
+    }
 `;
 export default GlobalStyle;

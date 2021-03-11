@@ -17,6 +17,8 @@ export const Basket = ({children}) => {
         setProductLines([...productLines, product]);
     };
 
+    
+
     useEffect (() => {
         const total = productLines.reduce((prev, cur)=>{
             return prev + cur.pris

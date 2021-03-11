@@ -32,14 +32,14 @@ function Fries ({fries, error}){
         <a>Dip</a>
       </Link>
     </section>
-        <main> 
+        <main className="menu-container"> 
             <ul>
                 {fries.map(item=>{
                     return( 
                         <div key={item}>
                             <h1 className="ProduktNavn">{item.navn}</h1>
                             <p>{item.pris}kr</p>
-                            <button
+                            <button className="bestillBtn"
                             onClick={()=>{
                                 handleAddToBasket(item)
                             }}

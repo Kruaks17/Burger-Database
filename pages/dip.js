@@ -32,14 +32,14 @@ function Dip ({dip, error}){
             <a>Dip</a>
         </Link>
     </section>  
-        <main>
+        <main className="menu-container">
             <ul>
                 {dip.map(item=>{
                     return(
                         <div key={item.id}>
                             <h1 className="ProduktNavn">{item.navn}</h1>
                             <p>{item.pris}kr</p>
-                            <button
+                            <button className="bestillBtn"
                             onClick={()=>{
                                 handleAddToBasket(item)
                             }}

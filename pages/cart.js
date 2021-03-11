@@ -5,15 +5,20 @@ import Link from 'next/link';
 
 function Cart() {
 
-    const [item, setItem] = useState([]);
+    const [productLines, setProductLines] = useState([]);
     const basket = useBasket();
 
-    
+    const deleteHandler = (id)=>{
+        let filter = productLines.filter((item) => item.id !== id);
+
+        setProductLines(filter);
+    };
 
     return ( 
         <div>
+            <header> <Link href="/" ><a className="tilbake">Tilbake til meny</a></Link></header>
             <h1 className="handlekurv">Handlekurv</h1>
-            <Link href="/" className="tilbake"><h1>Tilbake</h1></Link>
+            
             <div className="cart-container"> 
                 <h2>Bestilling</h2>
                     {basket.productLines && basket.productLines.map((item)=>{ 
@@ -21,7 +26,10 @@ function Cart() {
                         <>
                             <h2 className="productName">{item.navn}</h2>
                             <h2>{item.pris}kr</h2>
-                            <button >Fjern</button>
+                            <input type="number" placeholder="antall" className="amount"/> 
+                            <button onClick= {() =>{
+                                deleteHandler(item.id)
+                            }}>Fjern</button>
                         </>
                     )
                 })}
