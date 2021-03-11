@@ -13,7 +13,6 @@ function Cart() {
 
         setProductLines(filter);
     };
-
     return ( 
         <div>
             <header> <Link href="/" ><a className="tilbake">Tilbake til meny</a></Link></header>
