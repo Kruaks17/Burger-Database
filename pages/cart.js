@@ -10,17 +10,13 @@ function Cart() {
 
     
 
-    return (
-
-            
+    return ( 
         <div>
             <h1 className="handlekurv">Handlekurv</h1>
             <Link href="/" className="tilbake"><h1>Tilbake</h1></Link>
-            <div className="cart-container">
-                
+            <div className="cart-container"> 
                 <h2>Bestilling</h2>
-                    {basket.productLines && basket.productLines.map((item)=>{
-                        
+                    {basket.productLines && basket.productLines.map((item)=>{ 
                     return(
                         <>
                             <h2 className="productName">{item.navn}</h2>
