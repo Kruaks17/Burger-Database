@@ -25,7 +25,7 @@ const GlobalStyle = createGlobalStyle `
         text-decoration: none;
 
         display:flex;
-        justify-content:space-around;
+        justify-content:space-evenly;
         align-items:center;
 
         margin-top:50px;
