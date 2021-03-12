@@ -1,6 +1,6 @@
 import React from 'react';
 import {useBasket} from "../contexts/BasketContext";
-
+import Profile from "./profile";
 
 function checkOut() {
 
@@ -12,9 +12,12 @@ function checkOut() {
         <header>
             <h1> Børres Burger</h1> 
             <span className="deler"></span>
-            <h1>Bestilling:<span>{basket.total}</span></h1>
             <Profile/>
-        </header> 
+        </header>
+        <main>
+            
+
+        </main>
 
         </>
     )

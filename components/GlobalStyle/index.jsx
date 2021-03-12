@@ -83,6 +83,8 @@ const GlobalStyle = createGlobalStyle `
         color: black;
         font-size: 1rem;
         font-family:'acumin-pro', sans-serif;
+
+        margin-top: 10px;
     }
     input {
         background-color: white;
@@ -189,6 +191,8 @@ const GlobalStyle = createGlobalStyle `
 
         box-shadow: 10px 10px black;
     }
+    
+    
     @media (max-width:600px){
         .cart-container{
             max-width:100vw;
@@ -239,7 +243,7 @@ const GlobalStyle = createGlobalStyle `
         margin: 0 auto;
         max-width: 40vw;
         
-        box-shadow: 10px 10px black;
+        box-shadow: 5px 5px black;
     }
     .productName {
         font-family:'acumin-pro', sans-serif;
@@ -266,6 +270,7 @@ const GlobalStyle = createGlobalStyle `
 
         box-shadow: 10px 10px black;
     }
+
     @media (max-width:600px){
         .menu-container{
             max-width:100vw;

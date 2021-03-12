@@ -19,20 +19,20 @@ export const Basket = ({children}) => {
 
     const deleteHandler = (id)=>{
         let filter = productLines.filter((item) => item.id !== id);
-
         setProductLines(filter);
     };
-    const quantity = () =>{
-        
-    }
-
     useEffect (() => {
         const total = productLines.reduce((prev, cur)=>{
-            return prev + cur.pris
-        }, 0 )
+            return prev + cur.pris;
+            
+        }, 0);
         setTotal(total)
     },[productLines])
+
     
+
+
+
     return (
         <BasketContext.Provider value={{productLines, addProductLine, total, deleteHandler}} >
             {children}
