@@ -21,7 +21,7 @@ function Burger ({burger, error}){
     <h1>Børres Burger</h1> 
     <span className="deler"></span>
     <Link href="/cart">
-    <h1> <a>Bestilling<span>{basket.total}</span></a></h1>
+    <h1> <a>Bestilling:<span>{basket.total}</span></a></h1>
     </Link>
     <Profile/>
   </header> 

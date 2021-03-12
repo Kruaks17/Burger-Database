@@ -15,7 +15,7 @@ function Burger ({burger, error}){
     <header>
       <h1> Børres Burger</h1> 
       <span className="deler"></span>
-      <h1>Bestilling<span>{basket.total}</span></h1>
+      <h1>Bestilling:<span>{basket.total}</span></h1>
       <Profile/>
     </header> 
     <main>

@@ -36,7 +36,7 @@ function Fries ({fries, error}){
             <ul>
                 {fries.map(item=>{
                     return( 
-                        <div key={item}>
+                        <div key={item.id}>
                             <h1 className="ProduktNavn">{item.navn}</h1>
                             <p>{item.pris}kr</p>
                             <button className="bestillBtn"

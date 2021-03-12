@@ -10,7 +10,6 @@ function Dip ({dip, error}){
     const handleAddToBasket = (item) => {
         basket.addProductLine(item);
     }
-
     return(
         <>
         <header>
@@ -21,17 +20,17 @@ function Dip ({dip, error}){
             </Link>
             <Profile/>
         </header> 
-    <section className="meny">
-          <Link href="/">
-            <a>Burger</a>
-         </Link>
-         <Link href="/fries">
-            <a>Fries</a>
-        </Link>
-        <Link href="/dip">
-            <a>Dip</a>
-        </Link>
-    </section>  
+        <section className="meny">
+            <Link href="/">
+                <a>Burger</a>
+            </Link>
+            <Link href="/fries">
+                <a>Fries</a>
+            </Link>
+            <Link href="/dip">
+                <a>Dip</a>
+            </Link>
+        </section>  
         <main className="menu-container">
             <ul>
                 {dip.map(item=>{
@@ -53,11 +52,8 @@ function Dip ({dip, error}){
         </>
     )
 }
-
 Dip.getInitialProps= async( ) =>{
-
     try {
-
         const dipCollection = await firebaseInstance.firestore().collection('dip');
         const dipData = await dipCollection.get({})
 
@@ -67,17 +63,12 @@ Dip.getInitialProps= async( ) =>{
                 id: item.id,
                 ...item.data()
             });
-
         });
-
-        return {dip};
-        
+        return {dip}; 
     } catch (error) {
         return{
             error: error.message
-        };
-        
+        };        
     }
 }
-
 export default Dip;

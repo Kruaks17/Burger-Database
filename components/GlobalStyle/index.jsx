@@ -259,7 +259,7 @@ const GlobalStyle = createGlobalStyle `
 
         border: black solid 5px;
         margin: 0 auto;
-        max-width: 45vw;
+        max-width: 40vw;
         
         margin-bottom:50px;
         margin-top:50px;
