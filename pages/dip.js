@@ -13,7 +13,7 @@ function Dip ({dip, error}){
     return(
         <>
         <header>
-            <h1>Børres Burger</h1> 
+            <h1 className="borre">Børres Burger</h1> 
             <span className="deler"></span>
             <Link href="/cart">
             <h1> <a>Bestilling:<span>{basket.total}</span></a></h1>

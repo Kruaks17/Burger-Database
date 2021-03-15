@@ -1,10 +1,8 @@
 import React, {useState} from 'react';
 import firebase from '../config/firebase';
-import Form from '../components/form';
 import Link from 'next/link';
 import {useRouter} from 'next/router';
 import {useAuth} from '../auth';
-
 
 const Singup = ()=>{
 
@@ -14,25 +12,19 @@ const Singup = ()=>{
     const [error, setError]=useState(null);
     const history = useRouter();
 
-
-    
-    
-    
-    
     const handleSubmit = async(event)=>{
 
         event.preventDefault();
 
         console.log(email, password, fullName);
-
+ 
         try {
-
             await firebase.auth().createUserWithEmailAndPassword(email, password);
-            user.updateProfile({dipalyName : fullName})
+            await users.user.updateProfile({displayName:fullName})
             userColletion.doc(users.user.uid).set({
             userId: users.user.uid,
             userEmail: users.user.email,
-            userNamer: users.user.name,
+            userName: fullName,
             })
             history.push("/");
             console.log("Du har blitt logget inn");
@@ -41,8 +33,7 @@ const Singup = ()=>{
             setError(error.message);
             console.log("Noe gikk galt");
         }
-    };
-    
+    }; 
     return(
         <>
         <h1 className="Login-Overskrift">Registrer bruker</h1>

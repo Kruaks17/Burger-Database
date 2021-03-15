@@ -4,9 +4,7 @@ import Profile from "../pages/profile";
 import {useBasket} from "../contexts/BasketContext";
 import firebaseInstance from '../config/firebase';
 import Image from 'next/image';
-
-
-
+import LogInBTn from '../components/LoginBtn';
 
 function Burger ({burger, error}){
 
@@ -18,7 +16,7 @@ function Burger ({burger, error}){
   return(
       <>
   <header>
-    <h1>Børres Burger</h1> 
+    <h1 className="borre">Børres Burger</h1> 
     <span className="deler"></span>
     <Link href="/cart">
     <h1> <a>Bestilling:<span>{basket.total}</span></a></h1>
@@ -59,12 +57,7 @@ function Burger ({burger, error}){
 }
 
 Burger.getInitialProps= async( ) =>{
-
-  
   try {
-
-      
-   
       const brugereCollection = await firebaseInstance.firestore().collection('burgere');
       const burgerData = await brugereCollection.get()
 

@@ -1,6 +1,7 @@
 import {createGlobalStyle} from 'styled-components';
 
 const GlobalStyle = createGlobalStyle `
+
     *{
         @import url("https://use.typekit.net/wuf7ncy.css");
         box-sizing:border-box;
@@ -34,6 +35,11 @@ const GlobalStyle = createGlobalStyle `
 
         margin: 0 auto;
         max-width: 50vw;
+    }
+    @media ( max-width:600px){
+        .meny{
+            max-width:100vw;
+        }
     }
     ul {
         font-family: 'acumin-pro', sans-serif;
@@ -277,5 +283,11 @@ const GlobalStyle = createGlobalStyle `
             box-shadow: none;
         }
     }
+    .borre{
+        font-size: 3rem;
+        font-family:'bd-kickrom-mono', sans-serif;
+        color:white;
+    }
 `;
+
 export default GlobalStyle;
