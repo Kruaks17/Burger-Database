@@ -1,67 +1,64 @@
 import firebaseInstance from '../config/firebase';
 import Profile from "../pages/profile";
-import {useBasket} from "../contexts/BasketContext";
+import { useBasket } from "../contexts/BasketContext";
 
 
-function Burger ({burger, error}){
+function Burger({ burger, error }) {
 
     const basket = useBasket();
 
     const handleAddToBasket = (item) => {
         basket.addProductLine(item);
     }
-    return(
+    return (
         <>
-    <header>
-      <h1> Børres Burger</h1> 
-      <span className="deler"></span>
-      <h1>Bestilling:<span>{basket.total}</span></h1>
-      <Profile/>
-    </header> 
-    <main>
-        <ul>
-            {burger.map(item=>{
-                return(
-                    <div key={item.id}>
-                        <h2 className="ProduktNavn">{item.navn}</h2>
-                        <p>{item.pris}kr</p>
-                        <button className="bestillBtn"
-                        onClick={()=>{
-                            handleAddToBasket(item)
-                        }}
-                        type="submit"
-                        >Bestill</button>
-                    </div>
-                    )
-                })}
-        </ul>
-    </main>   
-    </> 
+            <header>
+                <h1> Børres Burger</h1>
+                <span className="deler"></span>
+                <h1>Bestilling:<span>{basket.total}</span></h1>
+                <Profile />
+            </header>
+            <main>
+                <ul>
+                    {burger.map(item => {
+                        return (
+                            <div key={item.id}>
+                                <h2 className="ProduktNavn">{item.navn}</h2>
+                                <p>{item.pris}kr</p>
+                                <button className="bestillBtn" onClick={() => {
+                                    handleAddToBasket(item)
+                                }}
+                                    type="submit"
+                                >Bestill</button>
+                            </div>
+                        )
+                    })}
+                </ul>
+            </main>
+        </>
     )
 }
-
-Burger.getInitialProps= async() =>{
-
+Burger.getInitialProps = async () => {
     try {
 
         const brugereCollection = await firebaseInstance.firestore().collection('burgere');
         const burgerData = await brugereCollection.get()
 
         let burger = [];
-        burgerData.forEach(item =>{
+        burgerData.forEach(item => {
             burger.push({
                 id: item.id,
                 ...item.data()
             });
         });
 
-        return {burger};
-        
+        return { burger };
+
     } catch (error) {
-        return{
+        return {
             error: error.message
         };
-        
+
     }
 
 }

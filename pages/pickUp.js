@@ -50,40 +50,61 @@ const Kitchen = () => {
 
     }, [])
 
-    const completeHandler = (item) => {
-        firbaseInstance.firestore().collection('order').doc(item.id).update({
-            complete: true,
-        })
-    };
-
-
     return (
         <>
-            <h1 className="orderh1">Bestillinger</h1>
-            {order && order.map((item) => {
-                if (!item.items) {
-                    return null;
-                }
-                return (
-                    <section className="order-container">
-                        {item.items.map((product) => {
-                            return (
-                                <section>
+            <div className="ikke-klar">
+                <h1>Ikke Klar</h1>
+                {order && order.filter(item => !item.complete)((item) => {
+                    if (!item.items) {
+                        return null;
+                    }
+                    return (
+                        <section className="order-container">
+                            <h2>{item.orderNumber}</h2>
+                            {item.items.map((product) => {
+                                return (
+                                    <section>
+                                        <h2>{product.navn}</h2>
+                                    </section>
+                                )
+                            })
+                            }
+
+                        </section>
+                    )
+                })}
+            </div>
+            <div className="klar">
+                <h1>Ikke Klar</h1>
+                {order && order.filter(item => item.complete)((item) => {
+                    if (!item.items) {
+                        return null;
+                    }
+                    return (
+                        <section className="order-container">
+                            <h2>Ordrenummer:{item.orderNumber}</h2>
+                            {item.items.map((product) => {
+                                return (
                                     <h2>{product.navn}</h2>
-                                </section>
-                            )
-                        })
-                        }
-                        <p>{item.orderNumber}</p>
-                        <button onClick={() => {
-                            { completeHandler(item) }
-                        }}>Fullført</button>
-                        <button>Hentet</button>
-                    </section>
-                )
-            })}
+                                )
+                            })
+                            }
+
+                        </section>
+                    )
+                })}
+            </div>
         </>
     )
+
+
+
+
+
+
+
+
+
+
 }
 
-export default Kitchen;

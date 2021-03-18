@@ -20,6 +20,33 @@ const GlobalStyle = createGlobalStyle `
         padding: 10px;
 
     }
+    form{
+
+        font-family: 'acumin-pro', sans-serif;
+        
+        display: grid;
+        grid-template-rows: repeat(3, 1fr);
+        justify-content:center;
+        align-content:center;
+
+        background-color: white;
+
+        border: black solid 5px;
+        
+        margin: 0 auto;
+        max-width: 30vw;
+
+        padding: 50px;
+
+        box-shadow: 10px 10px black;
+    }
+    @media(max-width:600px){
+        
+        form{
+            max-width:100vw;
+            box-shadow: none;
+        }
+    }
     .meny{
         font-family: 'acumin-pro', sans-serif;
         text-decoration: none;
@@ -54,31 +81,7 @@ const GlobalStyle = createGlobalStyle `
         align-content:center;
         
     }
-    form {
-
-        display: grid;
-        grid-template-rows: repeat(3, 1fr);
-        justify-content:center;
-        align-content:center;
-
-        background-color: white;
-    
-        border: black solid 5px;
-        
-        margin: 0 auto;
-        max-width: 30vw;
-
-        padding: 50px;
-
-        box-shadow: 10px 10px black;
-    }
-    @media(max-width:600px){
-        form{
-
-            max-width:100vw;
-            box-shadow: none;
-        }
-    }
+   
     button{
         border: black solid 5px;
         
@@ -108,7 +111,7 @@ const GlobalStyle = createGlobalStyle `
     .link-login{
 
         font-family:'acumin-pro', sans-serif;
-        background-color:white;
+        background-color:transparent;
         text-decoration:underline;
         color:black;
     }
@@ -118,6 +121,7 @@ const GlobalStyle = createGlobalStyle `
 
     }
     .Login-Overskrift{
+
         display:flex;
         justify-content:center;
         align-items:center;
@@ -136,6 +140,7 @@ const GlobalStyle = createGlobalStyle `
         margin-top:50px;
 
         box-shadow: 10px 10px black;
+
     }
     @media (max-width:600px){
         .Login-Overskrift{
@@ -179,28 +184,115 @@ const GlobalStyle = createGlobalStyle `
         font-family:'acumin-pro', sans-serif;
         font-size:1.5rem;
     }
-    .cart-container {
-
-        display: grid;
-        grid-template-rows: repeat(3, 1fr);
-        justify-content:center;
-        align-content:center;
-
-        background-color: white;
     
-        border: black solid 5px;
+    
+    .tilbake {
+        display:flex;
+        justify-content:center;
+        align-items:center;
+
+        font-family:'acumin-pro', sans-serif;
+        font-weight:bold;
+        text-decoration:none;
         
+        color: black;
+        background-color:white;
+
+        padding: 10px;
+
+        border: black solid 5px;
         margin: 0 auto;
         max-width: 40vw;
+        
+        box-shadow: 5px 5px black;
+    }
+    .productName {
+        font-family:'acumin-pro', sans-serif;
+        color: black;
+        background-color:white;
+    }
+    
+    .borre{
+        font-size: 3rem;
+        font-family:'bd-kickrom-mono', sans-serif;
+        color:white;
+    }
+    .orderh1 ,.mottat{
+        display:flex;
+        justify-content:center;
+        align-items:center;
 
-        padding: 50px;
+        font-family:'acumin-pro', sans-serif;
+        color: black;
+        background-color:white;
+
+        padding: 10px;
+
+        border: black solid 5px;
+        margin: 0 auto;
+        max-width: 30vw;
+        
+        margin-bottom:50px;
+        margin-top:50px;
 
         box-shadow: 10px 10px black;
     }
-    
-    
     @media (max-width:600px){
-        .cart-container{
+        .orderh1, .mottat{
+            max-width:100vw;
+            box-shadow: none;
+        }
+    }
+    .order-container, .cart-container{
+        display:grid;
+        grid-template-rows:repeat(3, 1fr);
+        justify-content:center;
+        align-items:center;
+
+        font-family:'acumin-pro', sans-serif;
+        color: black;
+        background-color:white;
+
+        padding: 10px;
+
+        border: black solid 5px;
+        margin: 0 auto;
+        max-width: 40vw;
+        
+        margin-bottom:50px;
+        margin-top:50px;
+
+        box-shadow: 10px 10px black;
+    }
+    @media (max-width:600px){
+        .cart-container, .order-container{
+            max-width:100vw;
+            box-shadow: none;
+        }
+    }
+    .menu-container {
+        display:flex;
+        justify-content:center;
+        align-items:center;
+
+        font-family:'acumin-pro', sans-serif;
+        color: black;
+        background-color:white;
+
+        padding: 10px;
+
+        border: black solid 5px;
+        margin: 0 auto;
+        max-width: 40vw;
+        
+        margin-bottom:50px;
+        margin-top:50px;
+
+        box-shadow: 10px 10px black;
+    }
+
+    @media (max-width:600px){
+        .menu-container{
             max-width:100vw;
             box-shadow: none;
         }
@@ -231,63 +323,7 @@ const GlobalStyle = createGlobalStyle `
             box-shadow: none;
         }
     }
-    .tilbake {
-        display:flex;
-        justify-content:center;
-        align-items:center;
 
-        font-family:'acumin-pro', sans-serif;
-        font-weight:bold;
-        text-decoration:none;
-        
-        color: black;
-        background-color:white;
-
-        padding: 10px;
-
-        border: black solid 5px;
-        margin: 0 auto;
-        max-width: 40vw;
-        
-        box-shadow: 5px 5px black;
-    }
-    .productName {
-        font-family:'acumin-pro', sans-serif;
-        color: black;
-        background-color:white;
-    }
-    .menu-container {
-        display:flex;
-        justify-content:center;
-        align-items:center;
-
-        font-family:'acumin-pro', sans-serif;
-        color: black;
-        background-color:white;
-
-        padding: 10px;
-
-        border: black solid 5px;
-        margin: 0 auto;
-        max-width: 40vw;
-        
-        margin-bottom:50px;
-        margin-top:50px;
-
-        box-shadow: 10px 10px black;
-    }
-
-    @media (max-width:600px){
-        .menu-container{
-            max-width:100vw;
-            box-shadow: none;
-        }
-    }
-    .borre{
-        font-size: 3rem;
-        font-family:'bd-kickrom-mono', sans-serif;
-        color:white;
-    }
 `;
 
 export default GlobalStyle;

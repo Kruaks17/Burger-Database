@@ -1,65 +1,80 @@
-import React, {createContext, useContext, useEffect, useState} from 'react';
+import React, { createContext, useContext, useEffect, useState } from 'react';
 
 
 const BasketContext = createContext({
 
     productLines: [],
-    addProductLine: () => {},
+    addProductLine: () => { },
     total: 0
 })
 
 
-export const Basket = ({children}) => {
+export const Basket = ({ children }) => {
 
     const [productLines, setProductLines] = useState([]);
     const [total, setTotal] = useState(0);
-    const [cart, setCart]= useState();
 
-    useEffect (() =>{
+
+    useEffect(() => {
+
 
         let data = localStorage.getItem("productLines");
-        let data2  = JSON.parse(data);
-    
-        if (data) {
+        let data2 = JSON.parse(data);
+
+        console.log(data, data2);
+
+        if (data !== undefined) {
             setProductLines(data2);
         }
-    
-       }, []); 
 
-   useEffect(()=>{
+    }, []);
 
-    localStorage.setItem("productLines",JSON.stringify(productLines));
+    useEffect(() => {
 
-   }, [productLines])
+        localStorage.setItem("productLines", JSON.stringify(productLines));
 
-   
-    
+    }, [productLines])
+
+
     const addProductLine = (product) => {
-        setProductLines([...productLines, product]);   
-        
-    };
+        setProductLines([...productLines, product]);
 
-    const deleteHandler = (id)=>{
+    };
+    const deleteHandler = (id) => {
         let filter = productLines.filter((item) => item.id !== id);
         setProductLines(filter);
     };
-    
-    useEffect (() => {
-        const total = productLines.reduce((prev, cur)=>{
+    /*const completeHandler = () =>{
+        setTodos(basket.productLines.map(item =>  {
+          if (item.id === item.id){
+              return{
+                  ...item, completed: !item.completed
+              }
+          }  
+          return item;
+        }));
+    };*/
+
+
+    useEffect(() => {
+        const total = productLines.reduce((prev, cur) => {
             return prev + cur.pris;
-            
         }, 0);
         setTotal(total)
-    },[productLines])
+    }, [productLines])
+
+    const clearAll = () => {
+        setProductLines([]);
+    }
 
     return (
-        <BasketContext.Provider value={{productLines, addProductLine, total, deleteHandler}} >
+        <BasketContext.Provider value={{ productLines, addProductLine, total, deleteHandler, clearAll }} >
             {children}
         </BasketContext.Provider>
     );
 };
-    export const BasketConsumer = BasketContext.Consumer;
+export const BasketConsumer = BasketContext.Consumer;
 
-    export const useBasket = () => {
-        return useContext(BasketContext);
-    };
+export const useBasket = () => {
+    return useContext(BasketContext);
+};

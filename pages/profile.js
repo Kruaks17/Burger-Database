@@ -1,29 +1,30 @@
-import React, {useEffect} from 'react';
-import firebase from '../config/firebase';
-import {useRouter} from 'next/router';
-import {useAuth} from '../auth';
+import React, { useEffect } from 'react';
+import { useRouter } from 'next/router';
+import { useAuth } from '../auth';
+import Link from 'next/link';
+import firbaseInstance from '../config/firebase';
 
 const Profile = () => {
-    const router = useRouter();
-    const userContext = useAuth();
-  
-  useEffect(()=>{
-      
+  const router = useRouter();
+  const userContext = useAuth();
+  const user = useAuth();
+
+  useEffect(() => {
+
     console.log("The Context");
 
   }, [userContext])
-  
-  const handleSignOut = async () =>{
-  
-    const logout = await firebase.auth().signOut();
+
+  const handleSignOut = async () => {
+
+    const logout = await firbaseInstance.auth().signOut();
     router.push("/login")
-};
-    return(
-        <button 
-        className="loggut_btn" 
-        onClick={handleSignOut}>Logg ut</button>
-    
-    )
-  }
+  };
+  return (
+    <>
+      <button onClick={handleSignOut}>Logg ut</button>
+    </>
+  )
+}
 
 export default Profile;

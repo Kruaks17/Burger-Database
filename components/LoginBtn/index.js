@@ -4,12 +4,12 @@ import {useAuth} from '../../auth';
 import {useRouter} from 'next/router';
 import firbaseInstance from '../../config/firebase';
 
-const LogInBTn = () =>{
+
+const LoginBtn = () =>{
     
-    const router = useRouter();
     const user = useAuth();
-
-
+    const router = useRouter();
+    
     const handleSignOut  = async () => {
 
         await firbaseInstance.auth().signOut();
@@ -18,10 +18,11 @@ const LogInBTn = () =>{
     return(    
         <>
             {user ? (    
-                <button onCLick={handleSignOut}>Logg ut</button>
+                <button onClick={handleSignOut}>Logg ut</button>
             ):(
                 <>
-                <Link href="/login"> <button>Logg inn </button></Link>
+                <Link href="/login">
+                <button><a>Logg inn</a></button></Link>
                 </>   
             )}
         </>
@@ -31,4 +32,4 @@ const LogInBTn = () =>{
 
 
 
-export default LogInBTn;
+export default LoginBtn;

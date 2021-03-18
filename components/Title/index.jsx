@@ -1,7 +1,11 @@
 import styled from 'styled-components';
 
-const Container = styled.div`
+export const Title = styled.h1`
 
+font-size: 2rem;
+font-family: 'acumin-pro', sans-serif;
+
+.Login-Overskrift{
         display:flex;
         justify-content:center;
         align-items:center;
@@ -14,21 +18,32 @@ const Container = styled.div`
 
         border: black solid 5px;
         margin: 0 auto;
-        max-width: 40vw;
+        max-width: 30vw;
         
         margin-bottom:50px;
         margin-top:50px;
 
         box-shadow: 10px 10px black;
-    
+    }
     @media (max-width:600px){
-       
+        .Login-Overskrift{
             max-width:100vw;
             box-shadow: none;
-       
+        }
+
     }
-    
+
+
+
+
+
 `;
 
+export const underTitle  = styled.h2`
 
-export default Container;
+font-size: 1rem;
+font-family: 'acumin-pro', sans-serif;
+
+`;
+
+export default Title;
