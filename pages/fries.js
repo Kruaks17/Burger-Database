@@ -11,6 +11,9 @@ function Fries({ fries, error }) {
     const handleAddToBasket = (item) => {
         basket.addProductLine(item);
     }
+
+    //-----------------------------------------------
+    //Viser antall bestillinger som ligger i cart
     const quantity = basket.productLines.length;
 
     return (

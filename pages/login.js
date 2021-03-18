@@ -24,7 +24,6 @@ const Login = () => {
         event.preventDefault();
 
         try {
-
             await firebase.auth().signInWithEmailAndPassword(email, password);
             history.push("/")
             console.log("Du har blitt logget inn");

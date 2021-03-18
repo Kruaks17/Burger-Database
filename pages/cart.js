@@ -12,6 +12,8 @@ function Cart() {
     const router = useRouter();
     const { user, loading, isAuthenticated } = useAuth();
 
+    //------------------------------------------------------------------s
+    //Sjekker om du er logget inn ellers blir man pushet til login siden
     if (loading) {
         return <>Loading...</>
     };
@@ -21,12 +23,16 @@ function Cart() {
             return <>Du er ikke logget inn</>
         };
     }, [])
-
+    
+    //henter inn fjerne funksjon fra basketContext
     const fjern = (id) => {
 
         basket.deleteHandler(id);
     };
-
+    
+    //-------------------------------------------------------
+    //Funksjon som pusher data fra bestilling inn i Firebase
+    
     function OrderHandler() {
 
         const collection = firebaseInstance.firestore().collection('order')
@@ -42,9 +48,7 @@ function Cart() {
                 console.log('Til firebase');
                 router.push('')
             })
-            /*.then(()=>{
-                basket.clearAll();
-            })*/
+            
 
             .catch((error) => {
                 console.log(error);

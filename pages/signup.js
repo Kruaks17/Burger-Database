@@ -6,6 +6,8 @@ import { useAuth } from '../auth';
 import Form from '../components/Form';
 import Title from '../components/Title';
 
+//------------------------------------------------------------------
+//Lager ny bruker som blir lagt til i Firebase med navn og epost
 const Singup = () => {
 
     const [fullName, setFullName] = useState(null);

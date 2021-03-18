@@ -21,6 +21,10 @@ function Burger({ burger, error }) {
  
   })
  */
+ 
+  //---------------------------------------------------------
+  //Henter inn funksjonen som legger til items i bestillinger
+
   const handleAddToBasket = (item) => {
     basket.addProductLine(item);
   }
@@ -68,6 +72,7 @@ function Burger({ burger, error }) {
     </>
   )
 }
+//Henter inn burger kolleksjonen fra firebase
 Burger.getInitialProps = async () => {
 
   try {

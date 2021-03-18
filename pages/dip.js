@@ -11,6 +11,7 @@ function Dip({ dip, error }) {
     const handleAddToBasket = (item) => {
         basket.addProductLine(item);
     }
+    
     const quantity = basket.productLines.length;
 
     return (

@@ -44,18 +44,6 @@ export const Basket = ({ children }) => {
         let filter = productLines.filter((item) => item.id !== id);
         setProductLines(filter);
     };
-    /*const completeHandler = () =>{
-        setTodos(basket.productLines.map(item =>  {
-          if (item.id === item.id){
-              return{
-                  ...item, completed: !item.completed
-              }
-          }  
-          return item;
-        }));
-    };*/
-
-
     useEffect(() => {
         const total = productLines.reduce((prev, cur) => {
             return prev + cur.pris;
