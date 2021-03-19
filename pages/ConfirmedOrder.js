@@ -12,7 +12,7 @@ const ConfirmedOrder = () => {
     return (
         <div>
             <h1 className="mottat">Bestillingen er mottat</h1>
-            <p>Takk for betillingen! Du vil motta en bekreftelse på din e-post.</p>
+            <p className="bedskjed">Takk for betillingen! Du vil motta en bekreftelse på din e-post.</p>
             <div className="order-container">
                 <div>
                     <h2>Din bestilling</h2>

@@ -7,6 +7,9 @@ import { useRouter } from 'next/router';
 
 function Burger({ burger, error }) {
 
+  console.log(burger);
+
+
   const basket = useBasket();
   const router = useRouter();
   /*const [image, setImage]= useState(null);*/
@@ -28,7 +31,7 @@ function Burger({ burger, error }) {
   const handleAddToBasket = (item) => {
     basket.addProductLine(item);
   }
-  const quantity = basket.productLines.length;
+  const quantity = basket.productLines.length; 
 
   return (
     <>
@@ -54,7 +57,7 @@ function Burger({ burger, error }) {
       <main className="menu-container">
         <ul>
           {burger.map(item => {
-            return (
+            return(
               <div key={item.id}>
                 <h2 className="ProduktNavn">{item.navn}</h2>
                 <p>{item.pris}kr</p>
@@ -77,13 +80,8 @@ Burger.getInitialProps = async () => {
 
   try {
 
-    const brugereCollection = await firebaseInstance.firestore().collection('burgere');
-    const burgerData = await brugereCollection.get()
-
-    /*const storageRef = firbase.storage().ref(user.uid);
-    const imageChild = storageRef.child('')
-    await imageChild.put(data.avatar[0])
-    console.log('completed upload')*/
+    const burgereCollection = await firebaseInstance.firestore().collection('burgere');
+    const burgerData = await burgereCollection.get()
 
     let burger = [];
     burgerData.forEach(item => {
@@ -92,8 +90,9 @@ Burger.getInitialProps = async () => {
         ...item.data()
       });
     });
-    return { burger };
-
+    console.log("burger", burger)
+    return { burger: [] };
+ç
   } catch (error) {
     return {
       error: error.message

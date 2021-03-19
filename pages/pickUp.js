@@ -4,7 +4,7 @@ import Link from 'next/link';
 import { useBasket } from '../contexts/BasketContext';
 import { useAuth } from '../auth';
 
-const Kitchen = () => {
+const PickUp = () => {
 
     const user = useAuth()
     const [order, setOrder] = useState(null);
@@ -97,14 +97,7 @@ const Kitchen = () => {
         </>
     )
 
-
-
-
-
-
-
-
-
-
 }
 
+
+export default PickUp;

@@ -237,6 +237,25 @@ const GlobalStyle = createGlobalStyle `
 
         box-shadow: 10px 10px black;
     }
+    .bedskjed{
+
+        display:flex;
+        justify-content:center;
+        align-items:center;
+
+        font-family:'acumin-pro', sans-serif;
+        color: black;
+        background-color:white;
+
+        border: black solid 5px;
+        margin: 0 auto;
+        max-width: 30vw;
+
+        padding: 10px;
+
+        
+        box-shadow: 5px 5px black;
+    }
     @media (max-width:600px){
         .orderh1, .mottat{
             max-width:100vw;
