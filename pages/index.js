@@ -7,9 +7,7 @@ import { useRouter } from 'next/router';
 
 function Burger({ burger, error }) {
 
-  console.log(burger);
-
-
+  
   const basket = useBasket();
   const router = useRouter();
   /*const [image, setImage]= useState(null);*/
@@ -27,7 +25,6 @@ function Burger({ burger, error }) {
  
   //---------------------------------------------------------
   //Henter inn funksjonen som legger til items i bestillinger
-
   const handleAddToBasket = (item) => {
     basket.addProductLine(item);
   }
@@ -80,8 +77,8 @@ Burger.getInitialProps = async () => {
 
   try {
 
-    const burgereCollection = await firebaseInstance.firestore().collection('burgere');
-    const burgerData = await burgereCollection.get()
+    const brugereCollection = await firebaseInstance.firestore().collection('burgere');
+    const burgerData = await brugereCollection.get()
 
     let burger = [];
     burgerData.forEach(item => {
@@ -90,9 +87,8 @@ Burger.getInitialProps = async () => {
         ...item.data()
       });
     });
-    console.log("burger", burger)
-    return { burger: [] };
-ç
+    return { burger };
+
   } catch (error) {
     return {
       error: error.message
