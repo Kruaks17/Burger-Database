@@ -30,9 +30,6 @@ const PickUp = () => {
         }
 
     }, [])
-    
-
-
     return (
         <>
             <h1 className="orderh1">Bestillinger</h1>
@@ -73,7 +70,6 @@ const PickUp = () => {
                                 )
                             })
                         }
-                        
                         </section>
                     )
                 })}
