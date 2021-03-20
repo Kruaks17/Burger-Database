@@ -2,13 +2,9 @@ import React from 'react';
 import { useBasket } from '../contexts/BasketContext';
 import Link from 'next/link';
 
-
 const ConfirmedOrder = () => {
 
     const basket = useBasket();
-
-    
-
     return (
         <div>
             <h1 className="mottat">Bestillingen er mottat</h1>
@@ -36,4 +32,5 @@ const ConfirmedOrder = () => {
         </div>
     )
 }
+
 export default ConfirmedOrder;

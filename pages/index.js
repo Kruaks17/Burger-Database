@@ -5,14 +5,14 @@ import firebaseInstance from '../config/firebase';
 import LoginBtn from '../components/LoginBtn';
 import { useRouter } from 'next/router';
 
-function Burger({ burger, error }) {
 
+function Burger({ burger, error }) {
 
   const basket = useBasket();
   const router = useRouter();
 
-  //---------------------------------------------------------
-  //Henter inn funksjonen som legger til items i bestillinger
+//----------------------------------------------------------
+//Henter inn funksjonen som legger til items i bestillinger
   const handleAddToBasket = (item) => {
     basket.addProductLine(item);
   }
@@ -60,6 +60,7 @@ function Burger({ burger, error }) {
     </>
   )
 }
+//---------------------------------------------
 //Henter inn burger kolleksjonen fra firebase
 Burger.getInitialProps = async () => {
 
@@ -76,7 +77,6 @@ Burger.getInitialProps = async () => {
       });
     });
     return { burger };
-
   } catch (error) {
     return {
       error: error.message
