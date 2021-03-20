@@ -7,28 +7,16 @@ import { useRouter } from 'next/router';
 
 function Burger({ burger, error }) {
 
-  
+
   const basket = useBasket();
   const router = useRouter();
-  /*const [image, setImage]= useState(null);*/
 
-
-  /*useEffect(()=>{
- 
-       const storageRef = firbase.storage().ref(user.uid);
-       const imageChild = storageRef.child('')
-       const url = await imageChild.getDownlaodURL()
- 
- 
-  })
- */
- 
   //---------------------------------------------------------
   //Henter inn funksjonen som legger til items i bestillinger
   const handleAddToBasket = (item) => {
     basket.addProductLine(item);
   }
-  const quantity = basket.productLines.length; 
+  const quantity = basket.productLines.length;
 
   return (
     <>
@@ -54,7 +42,7 @@ function Burger({ burger, error }) {
       <main className="menu-container">
         <ul>
           {burger.map(item => {
-            return(
+            return (
               <div key={item.id}>
                 <h2 className="ProduktNavn">{item.navn}</h2>
                 <p>{item.pris}kr</p>

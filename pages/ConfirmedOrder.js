@@ -7,7 +7,7 @@ const ConfirmedOrder = () => {
 
     const basket = useBasket();
 
-
+    
 
     return (
         <div>
@@ -17,15 +17,18 @@ const ConfirmedOrder = () => {
                 <div>
                     <h2>Din bestilling</h2>
                     {basket.productLines.map((item) => {
-                        return (
+                        return(
                             <div key={item.id}>
                                 <h2>{item.navn}</h2>
                                 <p>{item.pris}kr</p>
-                                <p>{item.orderNumber}kr</p>
+                                <p>Ordrenummer:{item.orderNumber}kr</p>
                             </div>
                         )
-                    })}<p>Totaltsum:{basket.total}kr</p>
-                    <Link href="/pickUp"><a>Klikk for å se om bestilling er ferdig!</a></Link>
+                    })}
+                    <h2>Totaltsum:{basket.total}kr</h2>
+                    <Link href="/pickUp">
+                        <a>Klikk for å se om bestilling er ferdig!</a>
+                    </Link>
                 </div>
 
 

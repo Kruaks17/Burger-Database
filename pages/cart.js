@@ -30,6 +30,7 @@ function Cart() {
         basket.deleteHandler(id);
     };
     
+    
     //-------------------------------------------------------
     //Funksjon som pusher data fra bestilling inn i Firebase
     
@@ -37,19 +38,19 @@ function Cart() {
 
         const collection = firebaseInstance.firestore().collection('order')
         collection
-            .doc()
-            .set({
+            .add({
                 items: [...basket.productLines],
                 complete: false,
                 Betale: basket.total,
-                orderNumber: Math.floor(Math.random() * 1000),
+                orderNumber: Math.floor(Math.random() * 100),
             })
-            .then(() => {
-                console.log('Til firebase');
-                router.push('')
+            .then((doc) => {
+                console.log('Til firebase', doc.id);
+                router.push(`confirmed/${doc.id}`)
             })
-            
-
+            .then((doc)=>{
+                basket.clearAll();
+            })
             .catch((error) => {
                 console.log(error);
             })

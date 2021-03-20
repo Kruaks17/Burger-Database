@@ -262,7 +262,7 @@ const GlobalStyle = createGlobalStyle `
             box-shadow: none;
         }
     }
-    .order-container, .cart-container{
+    .order-container, .cart-container, .ikke-klar, .klar{
         display:grid;
         grid-template-rows:repeat(3, 1fr);
         justify-content:center;
@@ -284,7 +284,7 @@ const GlobalStyle = createGlobalStyle `
         box-shadow: 10px 10px black;
     }
     @media (max-width:600px){
-        .cart-container, .order-container{
+        .cart-container, .order-container, .ikke-klar, .klar{
             max-width:100vw;
             box-shadow: none;
         }

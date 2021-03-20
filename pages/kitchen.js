@@ -9,12 +9,12 @@ const Kitchen = () => {
     const user = useAuth()
     const [order, setOrder] = useState(null);
     const basket = useBasket();
-    /*const [ready, setReady]= useSate(null); */
+    const [ready, setReady]= useState(null); 
 
     useEffect(() => {
         try {
             const OrderCollection = firbaseInstance.firestore().
-                collection('order').where('complete', '==', false).onSnapshot((querySnapshot) => {
+                collection('order').where('complete', '==',false).onSnapshot((querySnapshot) => {
                     let order = [];
                     querySnapshot.forEach((doc) => {
                         order.push({
@@ -33,7 +33,7 @@ const Kitchen = () => {
     useEffect(() => {
         try {
             const OrderCollection = firbaseInstance.firestore().
-                collection('order').where('complete', '==', true).onSnapshot((querySnapshot) => {
+                collection('order').where('complete', '==',true).onSnapshot((querySnapshot) => {
                     let order = [];
                     querySnapshot.forEach((doc) => {
                         order.push({
@@ -41,7 +41,7 @@ const Kitchen = () => {
                             ...doc.data(),
                         });
                     });
-                    setOrder(order);
+                    setReady(order);
                     console.log(order);
                 })
         } catch (error) {
@@ -50,18 +50,26 @@ const Kitchen = () => {
 
     }, [])
 
+
+    
     const completeHandler = (item) => {
         firbaseInstance.firestore().collection('order').doc(item.id).update({
-            complete: true,
+            complete: true
         })
     };
+    const deliveredHandler = (item) =>{
+
+        firbaseInstance.firestore().collection('order').doc(item.id).delete();
+        firbaseInstance.firestore().collection('levert').doc(item.id).set({...item});
+    };
+
+
     return (
-        <>
+        <>  
+            
             <h1 className="orderh1">Bestillinger</h1>
             {order && order.map((item) => {
-                if (!item.items) {
-                    return null;
-                }
+                
                 return (
                     <section className="order-container">
                         {item.items.map((product) => {
@@ -71,15 +79,29 @@ const Kitchen = () => {
                                 </section>
                             )
                         })
-                        }
-                        <p>{item.orderNumber}</p>
+                      }
+                        <p>Ordrenummer:{item.orderNumber}</p>
                         <button onClick={() => {
                             { completeHandler(item) }
                         }}>Fullført</button>
-                        <button>Hentet</button>
                     </section>
                 )
             })}
+            <section className="order-container">
+                <h1>Klar for henting</h1>
+                    {ready && ready.map((item)=>{
+                        return(
+                            <section>
+                                <p>Ordrenummer:{item.orderNumber}</p>
+                                <button
+                                onClick={()=> {deliveredHandler(item)}}
+                                >Hentet</button>
+                            </section>
+                        )
+                    })}
+
+
+            </section>
         </>
     )
 }

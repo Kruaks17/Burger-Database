@@ -7,7 +7,7 @@ import firbaseInstance from '../../config/firebase';
 
 const LoginBtn = () =>{
     
-    const user = useAuth();
+    const { user } = useAuth();
     const router = useRouter();
     
     const handleSignOut  = async () => {
