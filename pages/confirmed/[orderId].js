@@ -54,9 +54,8 @@ const Confirmed = () => {
         </>
     )
 };
-
 export async function getServerSideProps (ctx) {
-    console.log('LETT Å FÅ ØYE PÅ',ctx.query.orderId);
+    console.log(ctx.query.orderId);
 
     return {props:{}}
 

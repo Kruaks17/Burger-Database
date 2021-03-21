@@ -9,7 +9,7 @@ const PickUp = () => {
     const user = useAuth()
     const [order, setOrder] = useState(null);
     const basket = useBasket();
-    /*const [ready, setReady]= useSate(null); */    
+        
 
     useEffect(() => {
         try {
@@ -78,6 +78,4 @@ const PickUp = () => {
     )
 
 }
-
-
 export default PickUp;
