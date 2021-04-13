@@ -1,6 +1,7 @@
 import { AuthProvider } from '../auth';
 import GlobalStyle from '../components/GlobalStyle';
 import { Basket } from '../contexts/BasketContext';
+import '../styles/Global.css';
 
 function MyApp({ Component, pageProps }) {
 

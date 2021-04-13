@@ -4,7 +4,7 @@ import { useBasket } from "../contexts/BasketContext";
 import firebaseInstance from '../config/firebase';
 import LoginBtn from '../components/LoginBtn';
 import { useRouter } from 'next/router';
-
+import Profile from './profile';
 
 function Burger({ burger, error }) {
 
@@ -26,7 +26,7 @@ function Burger({ burger, error }) {
         <Link href="/cart">
           <h1><a>Bestilling:<span>{quantity}</span></a></h1>
         </Link>
-        <LoginBtn />
+        <Profile />
       </header>
       <section className="meny">
         <Link href="/">

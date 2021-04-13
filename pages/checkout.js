@@ -3,10 +3,7 @@ import { useBasket } from "../contexts/BasketContext";
 import Profile from "./profile";
 
 function checkOut() {
-
-
-
-
+    
     return (
         <>
             <header>
@@ -21,12 +18,6 @@ function checkOut() {
 
         </>
     )
-
-
-
-
 }
-
-
 
 export default checkOut;
