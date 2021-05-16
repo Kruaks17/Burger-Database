@@ -3,17 +3,19 @@ import { useBasket } from "../contexts/BasketContext";
 import Link from 'next/link';
 import firebaseInstance from '../config/firebase';
 import { useRouter } from 'next/router';
-import { useAuth } from '../auth';
-import Container from '../components/Container';
+
 
 function Cart() {
-
+    const [counter, setCounter] = useState(1);
     const basket = useBasket();
     const router = useRouter();
-    const { user, loading, isAuthenticated } = useAuth();
+    // const { loading, isAuthenticated, } = useAuth();
 
-    //------------------------------------------------------------------s
+
+
+    //------------------------------------------------------------------
     //Sjekker om du er logget inn ellers blir man pushet til login siden
+
     if (loading) {
         return <>Loading...</>
     };
@@ -23,17 +25,21 @@ function Cart() {
             return <>Du er ikke logget inn</>
         };
     }, [])
-    
-    //henter inn fjerne funksjon fra basketContext
-    const fjern = (id) => {
 
+    //Henter inn fjerne funksjon fra basketContext
+    const fjern = (id) => {
         basket.deleteHandler(id);
     };
-    
-    
+
+    useEffect(() => {
+        basket.productLines.count = counter;
+    }, [counter])
+
+    // legger til antall med en input 
+
+
     //-------------------------------------------------------
     //Funksjon som pusher data fra bestilling inn i Firebase
-    
     function OrderHandler() {
 
         const collection = firebaseInstance.firestore().collection('order')
@@ -48,16 +54,20 @@ function Cart() {
                 console.log('Til firebase', doc.id);
                 router.push(`confirmed/${doc.id}`)
             })
-            .then((doc)=>{
+            .then(() => {
                 basket.clearAll();
             })
             .catch((error) => {
                 console.log(error);
             })
     }
+
+
     return (
-        <div>
-            <header className="">
+        <>
+            <title> Børres-Burger / Handlekurv </title>
+            <header className="cart-header">
+                <h1 className="borre">Børres Burger</h1>
                 <Link href="/" >
                     <a className="tilbake">
                         Tilbake til meny</a>
@@ -66,21 +76,28 @@ function Cart() {
             <h1 className="handlekurv">Handlekurv</h1>
             <div className="cart-container">
                 {basket.productLines && basket.productLines.map((item) => {
+
                     return (
                         <>
                             <div key={item.id}>
-                                <h2 className="productName">{item.navn}</h2>
+                                <img src={item.bilde}
+                                    style={{ width: "100%" }} />
+                                <h2 className="">{item.navn}</h2>
+                                <p>{item.beskrivelse}</p>
                                 <h2>{item.pris}kr</h2>
                                 <input
+                                    onChange={() => setCounter(num)}
                                     type="number"
-                                    placeholder="Antall"
+                                    placeholder="1"
                                     min-value={0}
-                                ></input>
+                                >
+                                </input>
                                 <button className="removeBtn" onClick={() => {
                                     fjern(item.id)
                                 }}>Fjern
                             </button>
                             </div>
+                           
                         </>
                     )
                 })}
@@ -88,9 +105,9 @@ function Cart() {
                 <Link href="/ConfirmedOrder">
                     <button onClick={() => { OrderHandler() }} >Checkout</button>
                 </Link>
-
             </div>
-        </div>
+
+        </>
     )
 };
 

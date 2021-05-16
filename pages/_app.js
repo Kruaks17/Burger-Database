@@ -1,16 +1,16 @@
 import { AuthProvider } from '../auth';
-import GlobalStyle from '../components/GlobalStyle';
 import { Basket } from '../contexts/BasketContext';
 import '../styles/Global.css';
 
-function MyApp({ Component, pageProps }) {
 
+function MyApp({ Component, pageProps }) {
+  
   return (
     <>
-      <GlobalStyle />
+      <meta name="Børres-Burger" content="Burger restaurant hvor du kan bestille burgere til take-away"/>
       <AuthProvider>
         <Basket>
-          <Component {...pageProps} />
+          <Component   lang="no" {...pageProps} />
         </Basket>
       </AuthProvider>
     </>

@@ -1,21 +1,86 @@
-
+@import url("https://use.typekit.net/wuf7ncy.css");
+ 
     *{
-       
         box-sizing:border-box;
+        
     }
     body{
-        background-color: #E84823;
+
+        background-color:#E84823;
+
     }
     header{
+
         font-family: 'acumin-pro', sans-serif;
         color: white;
        
         display:flex;
-        justify-content:space-around;
+        justify-content:space-evenly;
         align-items:center;
 
         padding: 10px;
 
+        position: sticky;
+        top: 0;
+
+        border: black solid  5px;
+
+        margin: 0;
+
+        height: 90px;
+
+        background-color: #E84823;
+    }
+    .cart-header{
+        
+        font-family: 'acumin-pro', sans-serif;
+        color: white;
+       
+        display:flex;
+        justify-content:space-evenly;
+        align-items:center;
+
+        padding: 10px;
+
+        position: sticky;
+        top: 0;
+
+        border: black solid  5px;
+
+        height: 90px;
+
+        background-color: #E84823;
+
+    }
+    @media (max-width:600px){
+
+        header{
+            display: flex;
+            justify-content: space-evenly;
+            align-items: center;
+        }
+    }
+    footer{
+        font-family: 'acumin-pro', sans-serif;
+        font-size: 1.5rem;
+        color: white;
+       
+        display:flex;
+        justify-content:space-evenly;
+        align-items:center;
+
+        padding: 10px;
+
+        height: 80px;
+
+        position: sticky;
+        bottom: 0;
+
+        border: black solid  5px;
+
+        margin: 0;
+
+        background-color: #E84823;
     }
     form{
 
@@ -44,6 +109,10 @@
             box-shadow: none;
         }
     }
+    a{
+        text-decoration: none;
+        
+    }
     .meny{
         font-family: 'acumin-pro', sans-serif;
         text-decoration: none;
@@ -53,30 +122,36 @@
         align-items:center;
 
         margin-top:50px;
-        margin-bottom:40px;
+        
 
         padding: 40px;
 
         margin: 0 auto;
         max-width: 50vw;
+
+        
     }
     @media ( max-width:600px){
         .meny{
-            max-width:100vw;
+
+            max-width:200vw;
         }
     }
     ul {
         font-family: 'acumin-pro', sans-serif;
         font-size: 2rem;
-    
+        
         background-color:white;
-        margin-left:10px;
+        margin: 0 auto;
 
         display: grid;
         grid-template-rows: repeat(3, 1fr);
         justify-content:center;
         align-content:center;
-        
+
+        margin-bottom:50px;
+        margin-top:50px;
+        margin-right: 30px;
     }
    
     button{
@@ -90,7 +165,7 @@
         font-size: 1rem;
         font-family:'acumin-pro', sans-serif;
 
-        margin-top: 10px;
+
     }
     input {
         background-color: white;
@@ -101,9 +176,17 @@
         font-family:'acumin-pro', sans-serif;
 
         padding: 10px;
+
+        margin-bottom: 10px;
+        margin-right: 10px;
     }
     input::placeholder{
         color:black;
+    }
+    .passord{
+        padding: 10px;
+
+        margin-bottom: 10px;
     }
     .link-login{
 
@@ -153,11 +236,18 @@
         font-size:2rem;
         background-color:white;
     }
+    .priser{
+        margin-top: 5px;
+        margin-bottom:5px;
+        
+    }
     .loggut_btn {
-        width:90px;
+
+        width:80px;
     }
     button, a{
         cursor: pointer;
+        text-decoration: none;
     }
     h2{
         font-family:'acumin-pro', sans-serif;
@@ -179,11 +269,14 @@
     .bestillBtn{
         
         font-family:'acumin-pro', sans-serif;
-        font-size:1.5rem;
+        font-size:1.2rem;
+        
+        width: 250px;
+
+        margin-bottom: 50px;
     }
-    
-    
     .tilbake {
+
         display:flex;
         justify-content:center;
         align-items:center;
@@ -198,21 +291,24 @@
         padding: 10px;
 
         border: black solid 5px;
-        margin: 0 auto;
-        max-width: 40vw;
         
-        box-shadow: 5px 5px black;
+        width: 250px;
+        
     }
-    .productName {
-        font-family:'acumin-pro', sans-serif;
-        color: black;
-        background-color:white;
-    }
-    
     .borre{
+
         font-size: 3rem;
         font-family:'bd-kickrom-mono', sans-serif;
         color:white;
+        
+    }
+    @media (max-width:600px){
+
+        .borre{
+            font-size: 2rem;
+            line-height: 30px;
+        }
+
     }
     .orderh1 ,.mottat{
         display:flex;
@@ -282,6 +378,7 @@
     }
     @media (max-width:600px){
         .cart-container, .order-container, .ikke-klar, .klar{
+            
             max-width:100vw;
             box-shadow: none;
         }
@@ -296,24 +393,26 @@
         background-color:white;
 
         padding: 10px;
-
+        
         border: black solid 5px;
-        margin: 0 auto;
-        max-width: 40vw;
+        margin:0 auto; 
+        max-width: 40vw; 
+        
         
         margin-bottom:50px;
-        margin-top:50px;
+        /* margin-top:50px; */
 
         box-shadow: 10px 10px black;
     }
-
     @media (max-width:600px){
         .menu-container{
+
             max-width:100vw;
             box-shadow: none;
         }
     }
     .handlekurv{
+
         display:flex;
         justify-content:center;
         align-items:center;
@@ -332,14 +431,119 @@
         margin-top:50px;
 
         box-shadow: 10px 10px black;
+
     }
     @media (max-width:600px){
+
         .handlekurv{
             max-width:100vw;
             box-shadow: none;
         }
     }
+    .dropdown-menu{
 
+        position: absolute;
+        top: 1.9em;
+        right: -35px;
 
+        height:50vh;
+        width: 33vw;
+        
+        overflow: hidden;
+        overflow-y: scroll;
 
+        font-family: 'acumin-pro', sans-serif;
+        font-size: 16px;
+        color: black;
 
+        border: black solid 5px;
+
+        display: block;
+        justify-content: center;
+        align-items: center;
+
+        /* box-shadow: 10px 10px black;        */
+    }
+    @media (max-width: 600px){
+        .dropdown-menu{
+
+            width: 95.7vw;
+            height: 50vh;
+
+            position: absolute;
+            top: 30px;
+           
+
+            box-shadow: none;
+        }
+    }
+    .drop-down-input,.removeBtn-drop{
+        font-size: 12px;
+    }
+    .login-btn{
+        width: 20vw;
+    }
+    .removeBtn-drop{
+        
+        border: black solid 3px;
+        margin-left: 5px;
+        width: 90px;
+        
+    }
+    .drop-down-input{
+
+        border: black solid 3px;
+    }
+    .betaling{
+
+        border: black solid 5px;
+        text-decoration: none;
+        width: 200px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        padding: 5px;
+    }
+    .beskrivelse{
+
+        font-family: 'acumin-pro', sans-serif;
+        font-size: 1.3rem;
+    }
+    img {
+        margin-top: 10px;
+        border: #E84823 solid 5px;
+        
+    }
+    .handletitel{
+
+        font-family: 'acumin-pro', sans-serif;
+        font-size: 2rem;
+    }
+    @media (max-width:600px){
+        .handletitel{
+            font-size: 1.5rem;
+        }
+    }
+    @media (max-width:600px){
+        .arrow{
+            max-height: 48px;
+            max-width: 48px;
+        }
+    }
+    .arrow{
+        
+        margin-top: 10px;
+    }
+    .login-btn{
+        width: 200px;
+    }
+    .knupper{
+
+        box-shadow: 5px 5px black;
+
+    }
+    .copyrigth{
+        font-size: 1rem;
+    }

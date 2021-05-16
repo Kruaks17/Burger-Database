@@ -26,11 +26,8 @@ const ConfirmedOrder = () => {
                         <a>Klikk for å se om bestilling er ferdig!</a>
                     </Link>
                 </div>
-
-
             </div>
         </div>
     )
 }
-
 export default ConfirmedOrder;

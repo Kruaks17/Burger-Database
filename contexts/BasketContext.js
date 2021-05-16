@@ -5,18 +5,18 @@ const BasketContext = createContext({
 
     productLines: [],
     addProductLine: () => { },
-    total: 0
-})
+    total: 0,
+    quantity: 0,
 
+})
 
 export const Basket = ({ children }) => {
 
     const [productLines, setProductLines] = useState([]);
     const [total, setTotal] = useState(0);
-
+    const [quantity, setQuantity] = useState();
 
     useEffect(() => {
-
 
         let data = localStorage.getItem("productLines");
         let data2 = JSON.parse(data);
@@ -35,7 +35,6 @@ export const Basket = ({ children }) => {
 
     }, [productLines])
 
-
     const addProductLine = (product) => {
         setProductLines([...productLines, product]);
 
@@ -45,9 +44,19 @@ export const Basket = ({ children }) => {
         setProductLines(filter);
     };
     useEffect(() => {
+
+        const qty = productLines.reduce((prev, cur) => {
+            return prev + cur.qty;
+
+        }, 0)
+        setQuantity(qty)
+
         const total = productLines.reduce((prev, cur) => {
             return prev + cur.pris;
+
         }, 0);
+
+
         setTotal(total)
     }, [productLines])
 
@@ -55,8 +64,30 @@ export const Basket = ({ children }) => {
         setProductLines([]);
     }
 
+
+    // const updateCount = (id, count) => {
+
+    //     setProductLines(prev => {
+
+    //         const updatedProductLines = prev.map(item => {
+
+    //             if (id === item.id) {
+    //                 const updatedItem = { ...item, count: count }
+    //                 return updatedItem
+    //             }
+    //             return item;
+    //         })
+
+    //         return updatedProductLines;
+
+    //     })
+
+    // }
+
+
+
     return (
-        <BasketContext.Provider value={{ productLines, addProductLine, total, deleteHandler, clearAll }} >
+        <BasketContext.Provider value={{ productLines, addProductLine, total, deleteHandler, clearAll, quantity }} >
             {children}
         </BasketContext.Provider>
     );
