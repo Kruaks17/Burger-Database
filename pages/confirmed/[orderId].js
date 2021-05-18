@@ -36,6 +36,10 @@ const Confirmed = () => {
             <title>Børres-Bruger / Kvittering</title>
             <header className="cart-header">
                 <h1 className="borre">Børres Burger</h1>
+                <Link href="/" >
+                    <a className="tilbake">
+                        Tilbake til meny</a>
+                </Link>
             </header>
             <h1 className="orderh1">Kvittering</h1>
             <div className="cart-container">
@@ -56,9 +60,7 @@ const Confirmed = () => {
                 </Link>
             </div>
             
-            <footer>
-                <p>Børres Burger©</p>
-            </footer>
+           
 
         </>
     )
