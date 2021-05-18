@@ -1,7 +1,6 @@
 import { AuthProvider } from '../auth';
 import { Basket } from '../contexts/BasketContext';
 import '../styles/Global.css';
-import Head from 'next/head';
 
 function MyApp({ Component, pageProps }) {
   
