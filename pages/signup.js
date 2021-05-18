@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import firebase from '../config/firebase';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
-import Title from '../components/Title';
+
 import firbaseInstance from '../config/firebase';
 
 //--------------------------------------------------------------
@@ -47,7 +47,7 @@ const Singup = () => {
     return (
         <>
             <title> Børres-Burger / Registrering </title>
-            <Title className="Login-Overskrift">Registrer bruker</Title>
+            <h1 className="Login-Overskrift">Registrer bruker</h1>
             <form as="main" onSubmit={handleSubmit}>
                 <h2>Fullt navn</h2>
                 <input type="text" 

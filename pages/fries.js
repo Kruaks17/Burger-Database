@@ -13,10 +13,14 @@ function Fries({ fries }) {
   const handleAddToBasket = (item) => {
     basket.addProductLine(item);
   }
+  
+  //------------------------------------
+  // Fjerne funskjon fra BasketContext
   const fjern = (id) => {
 
     basket.deleteHandler(id);
   };
+
   const iconVariants = {
     open: {
 

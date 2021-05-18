@@ -17,7 +17,7 @@ export const Basket = ({ children }) => {
     const [quantity, setQuantity] = useState();
 
     //-----------------------------------------------------------
-    // Lagrer produ
+    // Lagrer produkter i Storage
     useEffect(() => {
 
         let data = localStorage.getItem("productLines");
@@ -68,6 +68,8 @@ export const Basket = ({ children }) => {
         setProductLines([]);
     }
 
+    //------------------------------------------------------------
+    //Oppdaterer input feltet for å endre antallet av ett produkt
     const updateCount = (id, count) => {
 
          setProductLines(prev => {
