@@ -16,6 +16,8 @@ export const Basket = ({ children }) => {
     const [total, setTotal] = useState(0);
     const [quantity, setQuantity] = useState();
 
+    //-----------------------------------------------------------
+    // Lagrer produ
     useEffect(() => {
 
         let data = localStorage.getItem("productLines");
@@ -26,68 +28,68 @@ export const Basket = ({ children }) => {
         if (data !== undefined) {
             setProductLines(data2);
         }
-
     }, []);
 
     useEffect(() => {
-
         localStorage.setItem("productLines", JSON.stringify(productLines));
-
     }, [productLines])
 
+    //-----------------------------------------------------
+    // Legger til produkter
     const addProductLine = (product) => {
         setProductLines([...productLines, product]);
-
     };
+
+    //-----------------------------------------------------------------
+    // Filtrerer ut produkter fra handlekurven 
     const deleteHandler = (id) => {
         let filter = productLines.filter((item) => item.id !== id);
         setProductLines(filter);
     };
+
+    //---------------------------------------------------------------
+    // Viser totalsummen av produkter og  quantity oppdateres 
     useEffect(() => {
 
-        const qty = productLines.reduce((prev, cur) => {
-            return prev + cur.qty;
-
-        }, 0)
-        setQuantity(qty)
-
         const total = productLines.reduce((prev, cur) => {
-            return prev + cur.pris;
-
+            console.log(typeof cur.count);
+            if(cur.count){
+                return prev + cur.pris * parseInt(cur.count);
+            }else {
+                return prev + cur.pris
+            }
         }, 0);
-
-
         setTotal(total)
+
     }, [productLines])
+
 
     const clearAll = () => {
         setProductLines([]);
     }
 
+    const updateCount = (id, count) => {
 
-    // const updateCount = (id, count) => {
+         setProductLines(prev => {
+            console.log(id, count);
+             const updatedProductLines = prev.map(item => {
+                 if (id === item.id) {
+                    const updatedItem = { ...item, count: count }
+                    return updatedItem
+                 }
+                 return item;
+             })
 
-    //     setProductLines(prev => {
+             return updatedProductLines;
 
-    //         const updatedProductLines = prev.map(item => {
+         })
 
-    //             if (id === item.id) {
-    //                 const updatedItem = { ...item, count: count }
-    //                 return updatedItem
-    //             }
-    //             return item;
-    //         })
-
-    //         return updatedProductLines;
-
-    //     })
-
-    // }
+     }
 
 
 
     return (
-        <BasketContext.Provider value={{ productLines, addProductLine, total, deleteHandler, clearAll, quantity }} >
+        <BasketContext.Provider value={{ productLines, addProductLine, total, deleteHandler, clearAll, quantity, updateCount }} >
             {children}
         </BasketContext.Provider>
     );

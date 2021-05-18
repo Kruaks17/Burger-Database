@@ -10,20 +10,16 @@ const LoginBtn = () =>{
     const { user } = useAuth();
     const router = useRouter();
 
-    console.log(user);
-    
     const handleSignOut  = async () => {
 
         await firbaseInstance.auth().signOut();
         
         router.push("/")
     }
-
-    // console.log(useAuth().currentUser)
    
     return(    
         <>
-            {user ? (    
+            {user ? (     
                 <button className="login-btn" onClick={handleSignOut}>Logg ut</button>
             ):(
                 <>

@@ -2,7 +2,8 @@
  
     *{
         box-sizing:border-box;
-        
+        outline-color: yellow;
+
     }
     body{
 
@@ -171,7 +172,7 @@
         background-color: white;
         border: black solid 5px;
 
-        color: #E84823;
+        color: black;
         font-size: 1rem;
         font-family:'acumin-pro', sans-serif;
 
@@ -461,19 +462,17 @@
         display: block;
         justify-content: center;
         align-items: center;
-
-        /* box-shadow: 10px 10px black;        */
+        
     }
     @media (max-width: 600px){
         .dropdown-menu{
 
-            width: 95.7vw;
+            width: 96vw;
             height: 50vh;
 
             position: absolute;
             top: 30px;
            
-
             box-shadow: none;
         }
     }
@@ -546,4 +545,9 @@
     }
     .copyrigth{
         font-size: 1rem;
+    }
+    .btn-arrow{
+        border: none;
+        background-color: transparent;
+        font-style: none;
     }

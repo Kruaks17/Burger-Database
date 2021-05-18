@@ -48,8 +48,7 @@ const Singup = () => {
         <>
             <title> Børres-Burger / Registrering </title>
             <Title className="Login-Overskrift">Registrer bruker</Title>
-            <div className="order-container" as="main" onSubmit={handleSubmit}>
-                
+            <form as="main" onSubmit={handleSubmit}>
                 <h2>Fullt navn</h2>
                 <input type="text" 
                 onChange={e => setFullName(e.target.value)} placeholder="Fullt navn" />
@@ -66,7 +65,7 @@ const Singup = () => {
                 <Link href="/login">
                     <a className="link-login">Har du bruker? Trykk her.</a>
                 </Link>
-            </div>
+            </form>
         </>
     )
 }

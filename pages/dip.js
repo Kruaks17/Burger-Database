@@ -42,6 +42,7 @@ function Dip({ dip }) {
       display: "none",
     }
   }
+  const {updateCount} = basket;
 
   const quantity = basket.productLines.length;
 
@@ -86,6 +87,7 @@ function Dip({ dip }) {
                     <h2 className="drop-down-item">{item.navn}</h2>
                     <p className="priser">{item.pris}kr</p>
                     <input
+                      onChange={(event) => {updateCount(item.id, event.target.value)}}
                       className="drop-down-input"
                       type="number"
                       placeholder={1}

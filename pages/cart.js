@@ -9,35 +9,13 @@ function Cart() {
     const [counter, setCounter] = useState(1);
     const basket = useBasket();
     const router = useRouter();
-    // const { loading, isAuthenticated, } = useAuth();
-
-
-
-    //------------------------------------------------------------------
-    //Sjekker om du er logget inn ellers blir man pushet til login siden
-
-    if (loading) {
-        return <>Loading...</>
-    };
-    useEffect(() => {
-        if (!isAuthenticated) {
-            router.push("");
-            return <>Du er ikke logget inn</>
-        };
-    }, [])
-
+   
     //Henter inn fjerne funksjon fra basketContext
     const fjern = (id) => {
         basket.deleteHandler(id);
     };
 
-    useEffect(() => {
-        basket.productLines.count = counter;
-    }, [counter])
-
-    // legger til antall med en input 
-
-
+    const {updateCount} = basket;
     //-------------------------------------------------------
     //Funksjon som pusher data fra bestilling inn i Firebase
     function OrderHandler() {
@@ -49,6 +27,7 @@ function Cart() {
                 complete: false,
                 Betale: basket.total,
                 orderNumber: Math.floor(Math.random() * 100),
+                count:1,
             })
             .then((doc) => {
                 console.log('Til firebase', doc.id);
@@ -80,13 +59,16 @@ function Cart() {
                     return (
                         <>
                             <div key={item.id}>
-                                <img src={item.bilde}
+                                <img 
+                                    alt="Bilde av produkter som er lagt til i handelkurv"
+                                    src={item.bilde}
                                     style={{ width: "100%" }} />
                                 <h2 className="">{item.navn}</h2>
                                 <p>{item.beskrivelse}</p>
                                 <h2>{item.pris}kr</h2>
                                 <input
-                                    onChange={() => setCounter(num)}
+                                
+                                    onChange={(event) => {updateCount(item.id, event.target.value)}}
                                     type="number"
                                     placeholder="1"
                                     min-value={0}

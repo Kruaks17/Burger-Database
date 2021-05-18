@@ -37,7 +37,7 @@ export function AuthProvider({ children }) {
         return clearInterval(handle)
     }, []);
     useEffect(() => {
-        firebase.auth().setPersistence(firebase.auth.Auth.Persistence.LOCAL)
+        firebase.auth().setPersistence(firebase.auth.Auth.Persistence.SESSION)
             .then(() => {
                 return firebase.auth().signInWithEmailAndPassword(email, password);
             })

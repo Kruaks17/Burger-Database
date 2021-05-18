@@ -52,7 +52,6 @@ function Burger({ burger, error }) {
       transition: { duration: 0.5 },
     }
   }
-
   const popUpVariants = {
     open: {
 
@@ -66,13 +65,20 @@ function Burger({ burger, error }) {
       display: "none",
     }
   }
-
-
+  function handleCommand(event) {
+    // Handles both mouse clicks and keyboard
+    // activate with Enter or Space
+    // Keypresses other then Enter and Space should not trigger a command
+    if (event instanceof KeyboardEvent && event.key !== 'Enter' && event.key !== ' ') {
+        return;
+    }
+  }
+  const {updateCount} = basket;
+  
   const quantity = basket.productLines.length;
 
   return (
     <>
-
       <title> Børres-Burger </title>
       <header>
         <h1 className="borre">Børres Burger</h1>
@@ -81,7 +87,7 @@ function Burger({ burger, error }) {
             <h1 className="handletitel">Cart({quantity})</h1>
             <span>
               <motion.svg
-
+              onKeyPress={(event)=> handleCommand(event)}
                 className="arrow"
                 cursor="pointer"
                 tabIndex={0}
@@ -98,8 +104,6 @@ function Burger({ burger, error }) {
                 <path fill="none" d="M0 0h24v24H0V0z"></path>
                 <path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"></path>
               </motion.svg>
-
-
             </span>
           </div>
           <motion.ul
@@ -115,11 +119,10 @@ function Burger({ burger, error }) {
                     <h2 className="drop-down-item">{item.navn}</h2>
                     <p className="priser">{item.pris}kr</p>
                     <input
-                      onChange={(e) => setCount(e.target.value)}
+                      onChange={(event) => {updateCount(item.id, event.target.value)}}
                       className="drop-down-input"
                       type="number"
                       placeholder={1}
-
                     ></input>
                     <button role="button" className="removeBtn-drop"
                       onClick={() => {
@@ -136,10 +139,9 @@ function Burger({ burger, error }) {
             </Link>
 
           </motion.ul>
-
         </div>
-
       </header>
+
       <section className="meny">
         <Link href="/">
           <a className="knupper">Burger</a>
@@ -174,6 +176,7 @@ function Burger({ burger, error }) {
           })}
         </ul>
       </section>
+      
       <footer>
         <p>Børres Burger©</p>
         <LoginBtn />
