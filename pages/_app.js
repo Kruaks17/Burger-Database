@@ -9,9 +9,7 @@ function MyApp({ Component, pageProps }) {
     <>
       <meta name="Børres-Burger" content="Burger restaurant hvor du kan 
       bestille burgere til take-away"/>
-      <Head>
-        <link href="../public/favicon.svg"/>
-      </Head>
+      
       <AuthProvider>
         <Basket>
           <Component lang="no" {...pageProps} />
