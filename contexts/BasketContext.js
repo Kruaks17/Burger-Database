@@ -53,9 +53,9 @@ export const Basket = ({ children }) => {
 
         const total = productLines.reduce((prev, cur) => {
             console.log(typeof cur.count);
-            if(cur.count){
+            if (cur.count) {
                 return prev + cur.pris * parseInt(cur.count);
-            }else {
+            } else {
                 return prev + cur.pris
             }
         }, 0);
@@ -72,21 +72,21 @@ export const Basket = ({ children }) => {
     //Oppdaterer input feltet for å endre antallet av ett produkt
     const updateCount = (id, count) => {
 
-         setProductLines(prev => {
+        setProductLines(prev => {
             console.log(id, count);
-             const updatedProductLines = prev.map(item => {
-                 if (id === item.id) {
+            const updatedProductLines = prev.map(item => {
+                if (id === item.id) {
                     const updatedItem = { ...item, count: count }
                     return updatedItem
-                 }
-                 return item;
-             })
+                }
+                return item;
+            })
 
-             return updatedProductLines;
+            return updatedProductLines;
 
-         })
+        })
 
-     }
+    }
 
 
 

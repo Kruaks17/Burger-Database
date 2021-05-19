@@ -2,8 +2,6 @@ import React, { useEffect } from 'react';
 import { useRouter } from 'next/router';
 import { useAuth } from '../auth';
 
-import firbaseInstance from '../config/firebase';
-
 const Profile = () => {
   const router = useRouter();
   const userContext = useAuth();
@@ -11,7 +9,7 @@ const Profile = () => {
   useEffect(() => {
 
     console.log("The Context");
-    
+
 
   }, [userContext])
 

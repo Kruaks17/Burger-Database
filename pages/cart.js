@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { useBasket } from "../contexts/BasketContext";
 import Link from 'next/link';
 import firebaseInstance from '../config/firebase';
@@ -6,16 +6,16 @@ import { useRouter } from 'next/router';
 
 
 function Cart() {
-    const [counter, setCounter] = useState(1);
+
     const basket = useBasket();
     const router = useRouter();
-   
+
     //Henter inn fjerne funksjon fra basketContext
     const fjern = (id) => {
         basket.deleteHandler(id);
     };
 
-    const {updateCount} = basket;
+    const { updateCount } = basket;
     //-------------------------------------------------------
     //Funksjon som pusher data fra bestilling inn i Firebase
     function OrderHandler() {
@@ -27,7 +27,7 @@ function Cart() {
                 complete: false,
                 Betale: basket.total,
                 orderNumber: Math.floor(Math.random() * 100),
-                count:1,
+                count: 1,
             })
             .then((doc) => {
                 console.log('Til firebase', doc.id);
@@ -59,7 +59,7 @@ function Cart() {
                     return (
                         <>
                             <div key={item.id}>
-                                <img 
+                                <img
                                     alt="Bilde av produkter som er lagt til i handelkurv"
                                     src={item.bilde}
                                     style={{ width: "100%" }} />
@@ -67,8 +67,8 @@ function Cart() {
                                 <p>{item.beskrivelse}</p>
                                 <h2>{item.pris}kr</h2>
                                 <input
-                                
-                                    onChange={(event) => {updateCount(item.id, event.target.value)}}
+
+                                    onChange={(event) => { updateCount(item.id, event.target.value) }}
                                     type="number"
                                     placeholder="1"
                                     min-value={0}
@@ -79,7 +79,7 @@ function Cart() {
                                 }}>Fjern
                             </button>
                             </div>
-                           
+
                         </>
                     )
                 })}

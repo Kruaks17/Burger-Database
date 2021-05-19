@@ -13,7 +13,7 @@ const ConfirmedOrder = () => {
                 <div>
                     <h2>Din bestilling</h2>
                     {basket.productLines.map((item) => {
-                        return(
+                        return (
                             <div key={item.id}>
                                 <h2>{item.navn}</h2>
                                 <p>{item.pris}kr</p>

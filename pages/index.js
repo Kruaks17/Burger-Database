@@ -15,15 +15,15 @@ function Burger({ burger, error }) {
   const [isOpen, setIsOpen] = useState(false);
   const { loading, isAuthenticated, } = useAuth();
 
-    if (loading) {
-        return <>Loading...</>
+  if (loading) {
+    return <>Loading...</>
+  };
+  useEffect(() => {
+    if (!isAuthenticated) {
+      router.push("/");
+      return <>Du er ikke logget inn</>
     };
-    useEffect(() => {
-        if (!isAuthenticated) {
-            router.push("/");
-            return <>Du er ikke logget inn</>
-        };
-    }, [])
+  }, [])
 
   //----------------------------------------------------------
   //Henter inn funksjonen som legger til items i bestillinger
@@ -65,16 +65,9 @@ function Burger({ burger, error }) {
       display: "none",
     }
   }
-  function handleCommand(event) {
-    // Handles both mouse clicks and keyboard
-    // activate with Enter or Space
-    // Keypresses other then Enter and Space should not trigger a command
-    if (event instanceof KeyboardEvent && event.key !== 'Enter' && event.key !== ' ') {
-        return;
-    }
-  }
-  const {updateCount} = basket;
   
+  const { updateCount } = basket;
+
   const quantity = basket.productLines.length;
 
   return (
@@ -87,7 +80,6 @@ function Burger({ burger, error }) {
             <h1 className="handletitel">Cart({quantity})</h1>
             <span>
               <motion.svg
-              onKeyPress={(event)=> handleCommand(event)}
                 className="arrow"
                 cursor="pointer"
                 tabIndex={0}
@@ -119,7 +111,7 @@ function Burger({ burger, error }) {
                     <h2 className="drop-down-item">{item.navn}</h2>
                     <p className="priser">{item.pris}kr</p>
                     <input
-                      onChange={(event) => {updateCount(item.id, event.target.value)}}
+                      onChange={(event) => { updateCount(item.id, event.target.value) }}
                       className="drop-down-input"
                       type="number"
                       placeholder={1}
@@ -176,7 +168,7 @@ function Burger({ burger, error }) {
           })}
         </ul>
       </section>
-      
+
       <footer>
         <p>Børres Burger©</p>
         <LoginBtn />

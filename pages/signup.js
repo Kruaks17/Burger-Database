@@ -50,17 +50,17 @@ const Singup = () => {
             <h1 className="Login-Overskrift">Registrer bruker</h1>
             <form as="main" onSubmit={handleSubmit}>
                 <h2>Fullt navn</h2>
-                <input type="text" 
-                onChange={e => setFullName(e.target.value)} placeholder="Fullt navn" />
+                <input type="text"
+                    onChange={e => setFullName(e.target.value)} placeholder="Fullt navn" />
 
                 <h2>Email</h2>
                 <input type="text" name="email" placeholder="Email"
-                onChange={e => setEmail(e.target.value)} />
+                    onChange={e => setEmail(e.target.value)} />
 
                 <h2>Passord</h2>
                 <input type="password" name="password" placeholder="Passord på 6 tegn minst"
-                onChange={e => setPassword(e.target.value)} />
-                
+                    onChange={e => setPassword(e.target.value)} />
+
                 <button className="btn" type="submit">Registrer</button>
                 <Link href="/login">
                     <a className="link-login">Har du bruker? Trykk her.</a>

@@ -29,7 +29,6 @@ const Confirmed = () => {
         });
 
     }, [])
-   
 
     return (
         <>
@@ -59,8 +58,8 @@ const Confirmed = () => {
                     <a>Trykk her for å se om bestilling er ferdig</a>
                 </Link>
             </div>
-            
-           
+
+
 
         </>
     )
