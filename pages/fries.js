@@ -119,7 +119,7 @@ function Fries({ fries }) {
         </div>
 
       </header>
-      <section className="meny">
+      <nav>
         <Link href="/">
           <a className="knupper">Burger</a>
         </Link>
@@ -129,7 +129,7 @@ function Fries({ fries }) {
         <Link href="/dip">
           <a className="knupper">Dip</a>
         </Link>
-      </section>
+      </nav>
       <main className="menu-container">
         <ul>
           {fries.map(item => {

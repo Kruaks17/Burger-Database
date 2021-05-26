@@ -3,15 +3,12 @@
     *{
         box-sizing:border-box;
         
-
     }
     body{
 
         background-color:#E84823;
-
     }
     header{
-
         font-family: 'acumin-pro', sans-serif;
         color: white;
        
@@ -31,27 +28,6 @@
         height: 90px;
 
         background-color: #E84823;
-    }
-    .cart-header{
-        
-        font-family: 'acumin-pro', sans-serif;
-        color: white;
-       
-        display:flex;
-        justify-content:space-evenly;
-        align-items:center;
-
-        padding: 10px;
-
-        position: sticky;
-        top: 0;
-
-        border: black solid  5px;
-
-        height: 90px;
-
-        background-color: #E84823;
-
     }
     @media (max-width:600px){
 
@@ -112,9 +88,8 @@
     }
     a{
         text-decoration: none;
-        
     }
-    .meny{
+    nav{
         font-family: 'acumin-pro', sans-serif;
         text-decoration: none;
 
@@ -129,15 +104,27 @@
 
         margin: 0 auto;
         max-width: 60vw;
-
-        
     }
     @media ( max-width:600px){
-        .meny{
+        nav{
 
             max-width:500vw;
             
         }
+    }
+    nav a {
+        box-shadow: 5px 5px black;
+        background-color: white;
+        
+        color: black;
+        font-size: 1.5rem;
+        font-weight: bold;
+        font-family:'acumin-pro', sans-serif;
+
+        text-decoration: none;
+        border: solid black 5px;
+
+        padding: 10px;
     }
     ul {
 
@@ -167,8 +154,6 @@
         color: black;
         font-size: 1rem;
         font-family:'acumin-pro', sans-serif;
-
-
     }
     input {
         background-color: white;
@@ -185,6 +170,14 @@
     }
     input::placeholder{
         color:black;
+    }
+    button, a{
+        cursor: pointer;
+        text-decoration: none;
+    }
+    h2{
+        font-family:'acumin-pro', sans-serif;
+        background-color:transparent;
     }
     .passord{
         padding: 10px;
@@ -247,27 +240,6 @@
     .loggut_btn {
 
         width:80px;
-    }
-    button, a{
-        cursor: pointer;
-        text-decoration: none;
-    }
-    h2{
-        font-family:'acumin-pro', sans-serif;
-        background-color:transparent;
-    }
-    .meny a {
-        background-color: white;
-        
-        color: black;
-        font-size: 1.5rem;
-        font-weight: bold;
-        font-family:'acumin-pro', sans-serif;
-
-        text-decoration: none;
-        border: solid black 5px;
-
-        padding: 10px;
     }
     .bestillBtn{
         
@@ -403,8 +375,7 @@
         
         
         margin-bottom:50px;
-        /* margin-top:50px; */
-
+       
         box-shadow: 10px 10px black;
     }
     @media (max-width:600px){
@@ -540,16 +511,4 @@
     .login-btn{
         width: 200px;
     }
-    .knupper{
-
-        box-shadow: 5px 5px black;
-
-    }
-    .copyrigth{
-        font-size: 1rem;
-    }
-    .btn-arrow{
-        border: none;
-        background-color: transparent;
-        font-style: none;
-    }
+   

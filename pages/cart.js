@@ -45,7 +45,7 @@ function Cart() {
     return (
         <>
             <title> Børres-Burger / Handlekurv </title>
-            <header className="cart-header">
+            <header >
                 <h1 className="borre">Børres Burger</h1>
                 <Link href="/" >
                     <a className="tilbake">

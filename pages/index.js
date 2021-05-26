@@ -6,6 +6,7 @@ import { useRouter } from 'next/router';
 import { motion } from 'framer-motion';
 import LoginBtn from '../components/LoginBtn/index';
 import { useAuth } from '../auth';
+import Head from 'next/head';
 
 function Burger({ burger, error }) {
 
@@ -28,9 +29,11 @@ function Burger({ burger, error }) {
   //----------------------------------------------------------
   //Henter inn funksjonen som legger til items i bestillinger
   const handleAddToBasket = (item) => {
+    
     basket.addProductLine({
       ...item,
       count: 1
+      
     });
   }
   const fjern = (id) => {
@@ -42,6 +45,7 @@ function Burger({ burger, error }) {
     basket.productLines.count = counter;
 
   }, [counter])
+  
   const iconVariants = {
     open: {
 
@@ -72,7 +76,9 @@ function Burger({ burger, error }) {
 
   return (
     <>
+      <Head>
       <title> Børres-Burger </title>
+      </Head>
       <header>
         <h1 className="borre">Børres Burger</h1>
         <div>
@@ -134,7 +140,7 @@ function Burger({ burger, error }) {
         </div>
       </header>
 
-      <section className="meny">
+      <nav>
         <Link href="/">
           <a className="knupper">Burger</a>
         </Link>
@@ -144,7 +150,7 @@ function Burger({ burger, error }) {
         <Link href="/dip">
           <a className="knupper">Dip</a>
         </Link>
-      </section>
+      </nav>
       <section className="menu-container">
         <ul>
           {burger && burger.map(item => {
@@ -156,7 +162,6 @@ function Burger({ burger, error }) {
                 <h2 className="ProduktNavn">{item.navn}</h2>
                 <p className="beskrivelse">{item.beskrivelse}</p>
                 <p className="priser">{item.pris}kr</p>
-
                 <button className="bestillBtn"
                   onClick={() => {
                     handleAddToBasket(item)
@@ -168,15 +173,13 @@ function Burger({ burger, error }) {
           })}
         </ul>
       </section>
-
       <footer>
         <p>Børres Burger©</p>
-        <LoginBtn />
+        <LoginBtn/>
       </footer>
     </>
   )
 }
-
 //---------------------------------------------
 //Henter inn burger kolleksjonen fra firebase
 Burger.getInitialProps = async () => {

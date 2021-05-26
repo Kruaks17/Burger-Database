@@ -108,20 +108,18 @@ function Dip({ dip }) {
             </Link>
           </motion.ul>
         </div>
-
       </header>
-
-      <section className="meny">
+      <nav>
         <Link href="/">
-          <a className="knupper">Burger</a>
+          <a>Burger</a>
         </Link>
         <Link href="/fries">
-          <a className="knupper">Sides</a>
+          <a>Sides</a>
         </Link>
         <Link href="/dip">
-          <a className="knupper">Dip</a>
+          <a>Dip</a>
         </Link>
-      </section>
+      </nav>
       <main className="menu-container">
         <ul>
           {dip.map(item => {
