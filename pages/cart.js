@@ -3,7 +3,7 @@ import { useBasket } from "../contexts/BasketContext";
 import Link from 'next/link';
 import firebaseInstance from '../config/firebase';
 import { useRouter } from 'next/router';
-
+import Head from 'next/head';
 
 function Cart() {
 
@@ -43,8 +43,10 @@ function Cart() {
 
 
     return (
-        <>
+        <>  
+            <Head>
             <title> Børres-Burger / Handlekurv </title>
+            </Head>
             <header >
                 <h1 className="borre">Børres Burger</h1>
                 <Link href="/" >

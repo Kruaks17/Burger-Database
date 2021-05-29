@@ -2,7 +2,7 @@ import React, { useContext, useState } from 'react';
 import firebase from '../config/firebase';
 import { useRouter } from 'next/router';
 import Link from 'next/link';
-
+import Head from 'next/head';
 
 const Login = () => {
 
@@ -36,7 +36,9 @@ const Login = () => {
 
     return (
         <>
+            <Head>
             <title> Børres-Burger / Login </title>
+            </Head>
             <h1 className="Login-Overskrift">Logg inn</h1>
             <form onSubmit={handleSubmit}>
 

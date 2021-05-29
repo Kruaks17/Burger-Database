@@ -4,6 +4,7 @@ import Profile from '../pages/profile';
 import Link from 'next/link';
 import { useBasket } from '../contexts/BasketContext';
 import { motion } from 'framer-motion';
+import Head from 'next/head';
 
 function Fries({ fries }) {
 
@@ -54,7 +55,9 @@ function Fries({ fries }) {
 
   return (
     <>
+      <Head>
       <title> Børres-Burger / Sides </title>
+      </Head>
       <header>
         <h1 className="borre">Børres Burger</h1>
         <div>

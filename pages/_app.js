@@ -7,11 +7,11 @@ function MyApp({ Component, pageProps }) {
   
   return (
     <>
-      <meta name="Børres-Burger" content="Burger restaurant hvor du kan 
+      <meta lang="no" name="Børres-Burger" content="Burger restaurant hvor du kan 
       bestille burgere til take-away"/>
       <AuthProvider>
         <Basket>
-          <Component lang="no" {...pageProps} />
+          <Component {...pageProps} />
         </Basket>
       </AuthProvider>
     </>

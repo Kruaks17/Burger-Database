@@ -36,6 +36,7 @@ function Burger({ burger, error }) {
       
     });
   }
+  
   const fjern = (id) => {
 
     basket.deleteHandler(id);
@@ -151,7 +152,7 @@ function Burger({ burger, error }) {
           <a className="knupper">Dip</a>
         </Link>
       </nav>
-      <section className="menu-container">
+     <section className="menu-container">
         <ul>
           {burger && burger.map(item => {
             return (
@@ -172,7 +173,7 @@ function Burger({ burger, error }) {
             )
           })}
         </ul>
-      </section>
+      </section> 
       <footer>
         <p>Børres Burger©</p>
         <LoginBtn/>

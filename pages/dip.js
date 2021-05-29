@@ -4,6 +4,7 @@ import Link from 'next/link';
 import { useBasket } from '../contexts/BasketContext';
 import { motion } from 'framer-motion';
 import React, { useState } from 'react';
+import Head from 'next/head';
 
 function Dip({ dip }) {
 
@@ -48,7 +49,9 @@ function Dip({ dip }) {
 
   return (
     <>
+      <Head>
       <title> Børres-Burger / Dip </title>
+      </Head>
       <header>
         <h1 className="borre">Børres Burger</h1>
         <div>

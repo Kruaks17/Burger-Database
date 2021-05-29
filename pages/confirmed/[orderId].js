@@ -2,8 +2,11 @@ import { useRouter } from 'next/router';
 import { useState, useEffect } from 'react';
 import firebaseInstance from '../../config/firebase';
 import Link from 'next/link';
+import { useBasket } from '../../contexts/BasketContext';
+import Head from 'next/head';
 
 const Confirmed = () => {
+    const basket = useBasket();
     const router = useRouter();
 
     const [order, setOrder] = useState(null);
@@ -32,7 +35,9 @@ const Confirmed = () => {
 
     return (
         <>
+            <Head>
             <title>Børres-Bruger / Kvittering</title>
+            </Head>
             <header className="cart-header">
                 <h1 className="borre">Børres Burger</h1>
                 <Link href="/" >
@@ -54,6 +59,7 @@ const Confirmed = () => {
                     )
                 })
                 }
+                
                 <Link href="/pickUp">
                     <a>Trykk her for å se om bestilling er ferdig</a>
                 </Link>

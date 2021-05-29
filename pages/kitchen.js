@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import firbaseInstance from '../config/firebase';
 import { useBasket } from '../contexts/BasketContext';
 import { useAuth } from '../auth';
+import Head from 'next/head';
+
 
 const Kitchen = () => {
 
@@ -66,7 +68,9 @@ const Kitchen = () => {
 
     return (
         <>
+            <Head>
             <title> Børres-Burger / Kjøkken </title>
+            </Head>
             <header className="cart-header">
                 <h1 className="borre">Børres Burger</h1>
             </header>
