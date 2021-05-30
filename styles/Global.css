@@ -456,7 +456,9 @@
         width: 20vw;
     }
     .removeBtn-drop{
-        
+
+        font-family: 'acumin-pro', sans-serif;
+        font-size: 13px;
         border: black solid 3px;
         margin-left: 5px;
         width: 90px;

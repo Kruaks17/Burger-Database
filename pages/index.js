@@ -15,6 +15,7 @@ function Burger({ burger, error }) {
   const router = useRouter();
   const [isOpen, setIsOpen] = useState(false);
   const { loading, isAuthenticated, } = useAuth();
+  
 
   if (loading) {
     return <>Loading...</>
@@ -29,6 +30,7 @@ function Burger({ burger, error }) {
   //----------------------------------------------------------
   //Henter inn funksjonen som legger til items i bestillinger
   const handleAddToBasket = (item) => {
+
     
     basket.addProductLine({
       ...item,
@@ -181,6 +183,7 @@ function Burger({ burger, error }) {
     </>
   )
 }
+
 //---------------------------------------------
 //Henter inn burger kolleksjonen fra firebase
 Burger.getInitialProps = async () => {
