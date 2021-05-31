@@ -38,6 +38,9 @@ function Burger({ burger, error }) {
       
     });
   }
+  const changeClick = () => {
+    
+  }
   
   const fjern = (id) => {
 
@@ -142,7 +145,6 @@ function Burger({ burger, error }) {
           </motion.ul>
         </div>
       </header>
-
       <nav>
         <Link href="/">
           <a className="knupper">Burger</a>

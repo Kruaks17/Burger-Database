@@ -37,8 +37,10 @@ export const Basket = ({ children }) => {
     //-----------------------------------------------------
     // Legger til produkter
     const addProductLine = (product) => {
+
         setProductLines([...productLines, product]);
 
+        
     };
 
     //-----------------------------------------------------------------

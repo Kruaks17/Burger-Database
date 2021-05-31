@@ -440,7 +440,7 @@
     @media (max-width: 600px){
         .dropdown-menu{
 
-            width: 96vw;
+            width: 96.8vw;
             height: 50vh;
 
             position: absolute;
@@ -467,6 +467,7 @@
     .drop-down-input{
 
         border: black solid 3px;
+        width: 120px;
     }
     .betaling{
 
