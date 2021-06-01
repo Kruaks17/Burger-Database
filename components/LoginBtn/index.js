@@ -4,7 +4,6 @@ import {useAuth} from '../../auth.js';
 import {useRouter} from 'next/router';
 import firbaseInstance from '../../config/firebase';
 
-
 const LoginBtn = () =>{
  
     const { user } = useAuth();
@@ -14,8 +13,9 @@ const LoginBtn = () =>{
 
         await firbaseInstance.auth().signOut();
         router.push("/")
+
     }
-   
+
     return(    
         <>
             {user ? (     
