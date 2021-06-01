@@ -1,6 +1,5 @@
 import React, { createContext, useContext, useEffect, useState } from 'react';
 
-
 const BasketContext = createContext({
 
     productLines: [],
@@ -28,6 +27,7 @@ export const Basket = ({ children }) => {
         if (data !== undefined) {
             setProductLines(data2);
         }
+
     }, []);
 
     useEffect(() => {

@@ -53,12 +53,13 @@ function Burger({ burger, error }) {
   }, [counter])
   
   const iconVariants = {
+    
     open: {
-
+      
       transition: { duration: 0.5 },
     },
     closed: {
-
+   
       transition: { duration: 0.5 },
     }
   }
@@ -92,6 +93,7 @@ function Burger({ burger, error }) {
             <h1 className="handletitel">Cart({quantity})</h1>
             <span>
               <motion.svg
+                style={{originX: 0, originY: 0}}
                 className="arrow"
                 cursor="pointer"
                 tabIndex={0}
@@ -104,6 +106,7 @@ function Burger({ burger, error }) {
                 height="58"
                 fill="#FFF"
                 viewBox="0 0 24 24"
+               
               >
                 <path fill="none" d="M0 0h24v24H0V0z"></path>
                 <path d="M7.41 8.59L12 13.17l4.59-4.58L18 10l-6 6-6-6 1.41-1.41z"></path>
