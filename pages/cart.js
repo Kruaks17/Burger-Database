@@ -40,8 +40,6 @@ function Cart() {
                 console.log(error);
             })
     }
-
-
     return (
         <>  
             <Head>
@@ -69,10 +67,9 @@ function Cart() {
                                 <p>{item.beskrivelse}</p>
                                 <h2>{item.pris}kr</h2>
                                 <input
-
                                     onChange={(event) => { updateCount(item.id, event.target.value) }}
                                     type="number"
-                                    placeholder="1"
+                                    placeholder= "1"
                                     min-value={0}
                                 >
                                 </input>
