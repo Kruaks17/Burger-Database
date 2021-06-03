@@ -16,6 +16,7 @@ function Cart() {
     };
 
     const { updateCount } = basket;
+    
     //-------------------------------------------------------
     //Funksjon som pusher data fra bestilling inn i Firebase
     function OrderHandler() {

@@ -90,9 +90,6 @@ export const Basket = ({ children }) => {
         })
 
     }
-
-
-
     return (
         <BasketContext.Provider value={{ productLines, addProductLine, total, deleteHandler, clearAll, quantity, updateCount }} >
             {children}
