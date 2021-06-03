@@ -275,7 +275,9 @@
         font-size: 3rem;
         font-family:'bd-kickrom-mono', sans-serif;
         color:white;
-        
+
+        text-shadow: black 2px 3px;
+
     }
     @media (max-width:600px){
 

@@ -19,16 +19,9 @@ const Singup = () => {
 
         event.preventDefault();
 
-        console.log(email, password, fullName);
-
-
         try {
-            const newUser = await firebase.auth().createUserWithEmailAndPassword(email, password);
-            await newUser.user.updateProfile({
-                displayName: fullName,
-            })
-
-            const userColletion = await firbaseInstance.firestore().collection('user')
+      
+            const userColletion = await firbaseInstance.firestore().collection('users')
             userColletion.updateProfile({ displayName: fullName })
             userColletion.doc(users.user.uid).set({
                 userId: users.user.uid,
@@ -43,7 +36,6 @@ const Singup = () => {
             console.log("Noe gikk galt");
         }
     };
-
     return (
         <>
             <title> Børres-Burger / Registrering </title>

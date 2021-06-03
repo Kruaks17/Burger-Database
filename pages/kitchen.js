@@ -51,20 +51,21 @@ const Kitchen = () => {
 
     }, [])
 
-
-
+    
     const completeHandler = (item) => {
         firbaseInstance.firestore().collection('order').doc(item.id).update({
             complete: true
         })
     };
+
+    //---------------------------------------------------------------------------
+    // Sletter bestillinger som ligger i order og flytter over bestillinger over til levert
     const deliveredHandler = (item) => {
 
         firbaseInstance.firestore().collection('order').doc(item.id).delete();
         firbaseInstance.firestore().collection('levert').doc(item.id).set({ ...item });
 
     };
-
 
     return (
         <>

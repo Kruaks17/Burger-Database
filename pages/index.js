@@ -30,18 +30,13 @@ function Burger({ burger, error }) {
   //----------------------------------------------------------
   //Henter inn funksjonen som legger til items i bestillinger
   const handleAddToBasket = (item) => {
-
-    
+  
     basket.addProductLine({
       ...item,
       count: 1
       
     });
   }
-  const changeClick = () => {
-    
-  }
-  
   const fjern = (id) => {
 
     basket.deleteHandler(id);
