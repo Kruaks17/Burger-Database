@@ -119,7 +119,11 @@ function Burger({ burger, error }) {
                 <>
                   <div key={item.id}>
                     <h2 className="drop-down-item">{item.navn}</h2>
+                    <img src={item.bilde}
+                          alt="Bilder av produkter"
+                          style={{ width: "50%" }} />
                     <p className="priser">{item.pris}kr</p>
+
                     <input
                       onChange={(event) => { updateCount(item.id, event.target.value) }}
                       className="drop-down-input"
